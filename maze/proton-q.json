@@ -1,0 +1,2190 @@
+[
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:04:29.682216964 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744669.682216964",
+          "frame.time_delta": "0.000548563",
+          "frame.time_delta_displayed": "0.000000000",
+          "frame.time_relative": "218.650666933",
+          "frame.number": "17992",
+          "frame.len": "583",
+          "frame.cap_len": "583",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:tls"
+        },
+        "eth": {
+          "eth.dst": "ca:0b:ad:ad:20:ba",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.dst.oui": "13241261",
+            "eth.addr": "ca:0b:ad:ad:20:ba",
+            "eth.addr_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.addr.oui": "13241261",
+            "eth.dst.lg": "1",
+            "eth.lg": "1",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "c8:09:a8:57:47:93",
+          "eth.src_tree": {
+            "eth.src_resolved": "IntelCor_57:47:93",
+            "eth.src.oui": "13109672",
+            "eth.src.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000000",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "0",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "569",
+          "ip.id": "0x0000b446",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x0000e04c",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.src_host": "192.168.1.26",
+          "ip.host": "192.168.1.26",
+          "ip.dst": "185.70.41.35",
+          "ip.addr": "185.70.41.35",
+          "ip.dst_host": "185.70.41.35",
+          "ip.host": "185.70.41.35"
+        },
+        "tcp": {
+          "tcp.srcport": "40280",
+          "tcp.dstport": "443",
+          "tcp.port": "40280",
+          "tcp.port": "443",
+          "tcp.stream": "194",
+          "tcp.len": "517",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "1391494761",
+          "tcp.nxtseq": "518",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "3597765393",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "511",
+          "tcp.window_size": "65408",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000a657",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:56:b8:96:d6:f8:64:ea:09",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:56:b8:96:d6:f8:64:ea:09",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1454937814",
+              "tcp.options.timestamp.tsecr": "4167363081"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.181866133",
+            "tcp.analysis.bytes_in_flight": "517",
+            "tcp.analysis.push_bytes_sent": "517"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.182414696",
+            "tcp.time_delta": "0.000548563"
+          },
+          "tcp.payload": "16:03:01:02:00:01:00:01:fc:03:03:24:e9:25:13:b9:7a:03:48:f7:33:d1:69:96:92:9a:79:be:21:b0:b1:40:0c:d7:e2:86:2a:73:2c:e7:77:5b:70:20:b8:83:7e:c9:68:78:f6:8e:dd:37:f1:1c:4f:ca:c5:77:2e:04:38:04:0d:5d:cd:3c:82:1c:b7:0e:f6:c7:6f:58:00:20:3a:3a:13:01:13:02:13:03:c0:2b:c0:2f:c0:2c:c0:30:cc:a9:cc:a8:c0:13:c0:14:00:9c:00:9d:00:2f:00:35:01:00:01:93:ba:ba:00:00:00:00:00:13:00:11:00:00:0e:70:72:6f:74:6f:6e:6d:61:69:6c:2e:63:6f:6d:00:17:00:00:ff:01:00:01:00:00:0a:00:0a:00:08:5a:5a:00:1d:00:17:00:18:00:0b:00:02:01:00:00:23:00:00:00:10:00:0e:00:0c:02:68:32:08:68:74:74:70:2f:31:2e:31:00:05:00:05:01:00:00:00:00:00:0d:00:12:00:10:04:03:08:04:04:01:05:03:08:05:05:01:08:06:06:01:00:12:00:00:00:33:00:2b:00:29:5a:5a:00:01:00:00:1d:00:20:22:6b:6d:52:92:46:58:aa:27:e0:3d:53:01:3f:c0:78:0e:bf:f4:62:8b:62:c2:e5:df:21:1c:fe:ab:99:72:1f:00:2d:00:02:01:01:00:2b:00:0b:0a:8a:8a:03:04:03:03:03:02:03:01:00:1b:00:03:02:00:02:da:da:00:01:00:00:15:00:ce:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+        },
+        "tls": {
+          "tls.record": {
+            "tls.record.content_type": "22",
+            "tls.record.version": "0x00000301",
+            "tls.record.length": "512",
+            "tls.handshake": {
+              "tls.handshake.type": "1",
+              "tls.handshake.length": "508",
+              "tls.handshake.version": "0x00000303",
+              "tls.handshake.random": "24:e9:25:13:b9:7a:03:48:f7:33:d1:69:96:92:9a:79:be:21:b0:b1:40:0c:d7:e2:86:2a:73:2c:e7:77:5b:70",
+              "tls.handshake.random_tree": {
+                "tls.handshake.random_time": "Aug 16, 1989 04:25:55.000000000 EDT",
+                "tls.handshake.random_bytes": "b9:7a:03:48:f7:33:d1:69:96:92:9a:79:be:21:b0:b1:40:0c:d7:e2:86:2a:73:2c:e7:77:5b:70"
+              },
+              "tls.handshake.session_id_length": "32",
+              "tls.handshake.session_id": "b8:83:7e:c9:68:78:f6:8e:dd:37:f1:1c:4f:ca:c5:77:2e:04:38:04:0d:5d:cd:3c:82:1c:b7:0e:f6:c7:6f:58",
+              "tls.handshake.cipher_suites_length": "32",
+              "tls.handshake.ciphersuites": {
+                "tls.handshake.ciphersuite": "14906",
+                "tls.handshake.ciphersuite": "4865",
+                "tls.handshake.ciphersuite": "4866",
+                "tls.handshake.ciphersuite": "4867",
+                "tls.handshake.ciphersuite": "49195",
+                "tls.handshake.ciphersuite": "49199",
+                "tls.handshake.ciphersuite": "49196",
+                "tls.handshake.ciphersuite": "49200",
+                "tls.handshake.ciphersuite": "52393",
+                "tls.handshake.ciphersuite": "52392",
+                "tls.handshake.ciphersuite": "49171",
+                "tls.handshake.ciphersuite": "49172",
+                "tls.handshake.ciphersuite": "156",
+                "tls.handshake.ciphersuite": "157",
+                "tls.handshake.ciphersuite": "47",
+                "tls.handshake.ciphersuite": "53"
+              },
+              "tls.handshake.comp_methods_length": "1",
+              "tls.handshake.comp_methods": {
+                "tls.handshake.comp_method": "0"
+              },
+              "tls.handshake.extensions_length": "403",
+              "Extension: Reserved (GREASE) (len=0)": {
+                "tls.handshake.extension.type": "47802",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: server_name (len=19)": {
+                "tls.handshake.extension.type": "0",
+                "tls.handshake.extension.len": "19",
+                "Server Name Indication extension": {
+                  "tls.handshake.extensions_server_name_list_len": "17",
+                  "tls.handshake.extensions_server_name_type": "0",
+                  "tls.handshake.extensions_server_name_len": "14",
+                  "tls.handshake.extensions_server_name": "protonmail.com"
+                }
+              },
+              "Extension: extended_master_secret (len=0)": {
+                "tls.handshake.extension.type": "23",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: renegotiation_info (len=1)": {
+                "tls.handshake.extension.type": "65281",
+                "tls.handshake.extension.len": "1",
+                "Renegotiation Info extension": {
+                  "tls.handshake.extensions_reneg_info_len": "0"
+                }
+              },
+              "Extension: supported_groups (len=10)": {
+                "tls.handshake.extension.type": "10",
+                "tls.handshake.extension.len": "10",
+                "tls.handshake.extensions_supported_groups_length": "8",
+                "tls.handshake.extensions_supported_groups": {
+                  "tls.handshake.extensions_supported_group": "0x00005a5a",
+                  "tls.handshake.extensions_supported_group": "0x0000001d",
+                  "tls.handshake.extensions_supported_group": "0x00000017",
+                  "tls.handshake.extensions_supported_group": "0x00000018"
+                }
+              },
+              "Extension: ec_point_formats (len=2)": {
+                "tls.handshake.extension.type": "11",
+                "tls.handshake.extension.len": "2",
+                "tls.handshake.extensions_ec_point_formats_length": "1",
+                "tls.handshake.extensions_ec_point_formats": {
+                  "tls.handshake.extensions_ec_point_format": "0"
+                }
+              },
+              "Extension: session_ticket (len=0)": {
+                "tls.handshake.extension.type": "35",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: application_layer_protocol_negotiation (len=14)": {
+                "tls.handshake.extension.type": "16",
+                "tls.handshake.extension.len": "14",
+                "tls.handshake.extensions_alpn_len": "12",
+                "tls.handshake.extensions_alpn_list": {
+                  "tls.handshake.extensions_alpn_str_len": "2",
+                  "tls.handshake.extensions_alpn_str": "h2",
+                  "tls.handshake.extensions_alpn_str_len": "8",
+                  "tls.handshake.extensions_alpn_str": "http/1.1"
+                }
+              },
+              "Extension: status_request (len=5)": {
+                "tls.handshake.extension.type": "5",
+                "tls.handshake.extension.len": "5",
+                "tls.handshake.extensions_status_request_type": "1",
+                "tls.handshake.extensions_status_request_responder_ids_len": "0",
+                "tls.handshake.extensions_status_request_exts_len": "0"
+              },
+              "Extension: signature_algorithms (len=18)": {
+                "tls.handshake.extension.type": "13",
+                "tls.handshake.extension.len": "18",
+                "tls.handshake.sig_hash_alg_len": "16",
+                "tls.handshake.sig_hash_algs": {
+                  "tls.handshake.sig_hash_alg": "0x00000403",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000804",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "4"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000401",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000503",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000805",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "5"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000501",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000806",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "6"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000601",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "6",
+                    "tls.handshake.sig_hash_sig": "1"
+                  }
+                }
+              },
+              "Extension: signed_certificate_timestamp (len=0)": {
+                "tls.handshake.extension.type": "18",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: key_share (len=43)": {
+                "tls.handshake.extension.type": "51",
+                "tls.handshake.extension.len": "43",
+                "Key Share extension": {
+                  "tls.handshake.extensions_key_share_client_length": "41",
+                  "Key Share Entry: Group: Reserved (GREASE), Key Exchange length: 1": {
+                    "tls.handshake.extensions_key_share_group": "23130",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "1",
+                    "tls.handshake.extensions_key_share_key_exchange": "00"
+                  },
+                  "Key Share Entry: Group: x25519, Key Exchange length: 32": {
+                    "tls.handshake.extensions_key_share_group": "29",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "32",
+                    "tls.handshake.extensions_key_share_key_exchange": "22:6b:6d:52:92:46:58:aa:27:e0:3d:53:01:3f:c0:78:0e:bf:f4:62:8b:62:c2:e5:df:21:1c:fe:ab:99:72:1f"
+                  }
+                }
+              },
+              "Extension: psk_key_exchange_modes (len=2)": {
+                "tls.handshake.extension.type": "45",
+                "tls.handshake.extension.len": "2",
+                "tls.extension.psk_ke_modes_length": "1",
+                "tls.extension.psk_ke_mode": "1"
+              },
+              "Extension: supported_versions (len=11)": {
+                "tls.handshake.extension.type": "43",
+                "tls.handshake.extension.len": "11",
+                "tls.handshake.extensions.supported_versions_len": "10",
+                "tls.handshake.extensions.supported_version": "0x00008a8a",
+                "tls.handshake.extensions.supported_version": "0x00000304",
+                "tls.handshake.extensions.supported_version": "0x00000303",
+                "tls.handshake.extensions.supported_version": "0x00000302",
+                "tls.handshake.extensions.supported_version": "0x00000301"
+              },
+              "Extension: compress_certificate (len=3)": {
+                "tls.handshake.extension.type": "27",
+                "tls.handshake.extension.len": "3",
+                "tls.compress_certificate.algorithms_length": "2",
+                "tls.compress_certificate.algorithm": "2"
+              },
+              "Extension: Reserved (GREASE) (len=1)": {
+                "tls.handshake.extension.type": "56026",
+                "tls.handshake.extension.len": "1",
+                "tls.handshake.extension.data": "00"
+              },
+              "Extension: padding (len=206)": {
+                "tls.handshake.extension.type": "21",
+                "tls.handshake.extension.len": "206",
+                "tls.handshake.extensions_padding_data": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:04:29.685348238 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744669.685348238",
+          "frame.time_delta": "0.000399830",
+          "frame.time_delta_displayed": "0.003131274",
+          "frame.time_relative": "218.653798207",
+          "frame.number": "17997",
+          "frame.len": "583",
+          "frame.cap_len": "583",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:tls"
+        },
+        "eth": {
+          "eth.dst": "ca:0b:ad:ad:20:ba",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.dst.oui": "13241261",
+            "eth.addr": "ca:0b:ad:ad:20:ba",
+            "eth.addr_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.addr.oui": "13241261",
+            "eth.dst.lg": "1",
+            "eth.lg": "1",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "c8:09:a8:57:47:93",
+          "eth.src_tree": {
+            "eth.src_resolved": "IntelCor_57:47:93",
+            "eth.src.oui": "13109672",
+            "eth.src.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000000",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "0",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "569",
+          "ip.id": "0x0000f8bb",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x00009bd7",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.src_host": "192.168.1.26",
+          "ip.host": "192.168.1.26",
+          "ip.dst": "185.70.41.35",
+          "ip.addr": "185.70.41.35",
+          "ip.dst_host": "185.70.41.35",
+          "ip.host": "185.70.41.35"
+        },
+        "tcp": {
+          "tcp.srcport": "40282",
+          "tcp.dstport": "443",
+          "tcp.port": "40282",
+          "tcp.port": "443",
+          "tcp.stream": "195",
+          "tcp.len": "517",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "2215997513",
+          "tcp.nxtseq": "518",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "2373641300",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "511",
+          "tcp.window_size": "65408",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000a657",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:56:b8:96:d9:f8:64:ea:0a",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:56:b8:96:d9:f8:64:ea:0a",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1454937817",
+              "tcp.options.timestamp.tsecr": "4167363082"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.184852682",
+            "tcp.analysis.bytes_in_flight": "517",
+            "tcp.analysis.push_bytes_sent": "517"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.185252512",
+            "tcp.time_delta": "0.000399830"
+          },
+          "tcp.payload": "16:03:01:02:00:01:00:01:fc:03:03:32:b9:d3:6d:dc:0a:2c:c8:c4:68:11:a5:01:14:ee:24:25:c3:db:f6:7b:e6:b3:d7:6f:18:6e:f2:55:51:54:8a:20:dd:56:dd:02:9a:be:83:2c:dd:2b:30:05:b5:d3:b2:db:52:f4:7c:f5:f1:4f:73:36:dc:55:84:e7:17:9c:a5:17:00:20:ea:ea:13:01:13:02:13:03:c0:2b:c0:2f:c0:2c:c0:30:cc:a9:cc:a8:c0:13:c0:14:00:9c:00:9d:00:2f:00:35:01:00:01:93:ca:ca:00:00:00:00:00:13:00:11:00:00:0e:70:72:6f:74:6f:6e:6d:61:69:6c:2e:63:6f:6d:00:17:00:00:ff:01:00:01:00:00:0a:00:0a:00:08:2a:2a:00:1d:00:17:00:18:00:0b:00:02:01:00:00:23:00:00:00:10:00:0e:00:0c:02:68:32:08:68:74:74:70:2f:31:2e:31:00:05:00:05:01:00:00:00:00:00:0d:00:12:00:10:04:03:08:04:04:01:05:03:08:05:05:01:08:06:06:01:00:12:00:00:00:33:00:2b:00:29:2a:2a:00:01:00:00:1d:00:20:56:67:fb:df:1f:4c:27:4e:3c:f7:bc:5f:ea:70:d1:cb:ea:97:1f:23:69:82:62:d3:d9:7e:86:4f:79:e7:cc:1d:00:2d:00:02:01:01:00:2b:00:0b:0a:4a:4a:03:04:03:03:03:02:03:01:00:1b:00:03:02:00:02:5a:5a:00:01:00:00:15:00:ce:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+        },
+        "tls": {
+          "tls.record": {
+            "tls.record.content_type": "22",
+            "tls.record.version": "0x00000301",
+            "tls.record.length": "512",
+            "tls.handshake": {
+              "tls.handshake.type": "1",
+              "tls.handshake.length": "508",
+              "tls.handshake.version": "0x00000303",
+              "tls.handshake.random": "32:b9:d3:6d:dc:0a:2c:c8:c4:68:11:a5:01:14:ee:24:25:c3:db:f6:7b:e6:b3:d7:6f:18:6e:f2:55:51:54:8a",
+              "tls.handshake.random_tree": {
+                "tls.handshake.random_time": "Dec 19, 1996 18:44:45.000000000 EST",
+                "tls.handshake.random_bytes": "dc:0a:2c:c8:c4:68:11:a5:01:14:ee:24:25:c3:db:f6:7b:e6:b3:d7:6f:18:6e:f2:55:51:54:8a"
+              },
+              "tls.handshake.session_id_length": "32",
+              "tls.handshake.session_id": "dd:56:dd:02:9a:be:83:2c:dd:2b:30:05:b5:d3:b2:db:52:f4:7c:f5:f1:4f:73:36:dc:55:84:e7:17:9c:a5:17",
+              "tls.handshake.cipher_suites_length": "32",
+              "tls.handshake.ciphersuites": {
+                "tls.handshake.ciphersuite": "60138",
+                "tls.handshake.ciphersuite": "4865",
+                "tls.handshake.ciphersuite": "4866",
+                "tls.handshake.ciphersuite": "4867",
+                "tls.handshake.ciphersuite": "49195",
+                "tls.handshake.ciphersuite": "49199",
+                "tls.handshake.ciphersuite": "49196",
+                "tls.handshake.ciphersuite": "49200",
+                "tls.handshake.ciphersuite": "52393",
+                "tls.handshake.ciphersuite": "52392",
+                "tls.handshake.ciphersuite": "49171",
+                "tls.handshake.ciphersuite": "49172",
+                "tls.handshake.ciphersuite": "156",
+                "tls.handshake.ciphersuite": "157",
+                "tls.handshake.ciphersuite": "47",
+                "tls.handshake.ciphersuite": "53"
+              },
+              "tls.handshake.comp_methods_length": "1",
+              "tls.handshake.comp_methods": {
+                "tls.handshake.comp_method": "0"
+              },
+              "tls.handshake.extensions_length": "403",
+              "Extension: Reserved (GREASE) (len=0)": {
+                "tls.handshake.extension.type": "51914",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: server_name (len=19)": {
+                "tls.handshake.extension.type": "0",
+                "tls.handshake.extension.len": "19",
+                "Server Name Indication extension": {
+                  "tls.handshake.extensions_server_name_list_len": "17",
+                  "tls.handshake.extensions_server_name_type": "0",
+                  "tls.handshake.extensions_server_name_len": "14",
+                  "tls.handshake.extensions_server_name": "protonmail.com"
+                }
+              },
+              "Extension: extended_master_secret (len=0)": {
+                "tls.handshake.extension.type": "23",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: renegotiation_info (len=1)": {
+                "tls.handshake.extension.type": "65281",
+                "tls.handshake.extension.len": "1",
+                "Renegotiation Info extension": {
+                  "tls.handshake.extensions_reneg_info_len": "0"
+                }
+              },
+              "Extension: supported_groups (len=10)": {
+                "tls.handshake.extension.type": "10",
+                "tls.handshake.extension.len": "10",
+                "tls.handshake.extensions_supported_groups_length": "8",
+                "tls.handshake.extensions_supported_groups": {
+                  "tls.handshake.extensions_supported_group": "0x00002a2a",
+                  "tls.handshake.extensions_supported_group": "0x0000001d",
+                  "tls.handshake.extensions_supported_group": "0x00000017",
+                  "tls.handshake.extensions_supported_group": "0x00000018"
+                }
+              },
+              "Extension: ec_point_formats (len=2)": {
+                "tls.handshake.extension.type": "11",
+                "tls.handshake.extension.len": "2",
+                "tls.handshake.extensions_ec_point_formats_length": "1",
+                "tls.handshake.extensions_ec_point_formats": {
+                  "tls.handshake.extensions_ec_point_format": "0"
+                }
+              },
+              "Extension: session_ticket (len=0)": {
+                "tls.handshake.extension.type": "35",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: application_layer_protocol_negotiation (len=14)": {
+                "tls.handshake.extension.type": "16",
+                "tls.handshake.extension.len": "14",
+                "tls.handshake.extensions_alpn_len": "12",
+                "tls.handshake.extensions_alpn_list": {
+                  "tls.handshake.extensions_alpn_str_len": "2",
+                  "tls.handshake.extensions_alpn_str": "h2",
+                  "tls.handshake.extensions_alpn_str_len": "8",
+                  "tls.handshake.extensions_alpn_str": "http/1.1"
+                }
+              },
+              "Extension: status_request (len=5)": {
+                "tls.handshake.extension.type": "5",
+                "tls.handshake.extension.len": "5",
+                "tls.handshake.extensions_status_request_type": "1",
+                "tls.handshake.extensions_status_request_responder_ids_len": "0",
+                "tls.handshake.extensions_status_request_exts_len": "0"
+              },
+              "Extension: signature_algorithms (len=18)": {
+                "tls.handshake.extension.type": "13",
+                "tls.handshake.extension.len": "18",
+                "tls.handshake.sig_hash_alg_len": "16",
+                "tls.handshake.sig_hash_algs": {
+                  "tls.handshake.sig_hash_alg": "0x00000403",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000804",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "4"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000401",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000503",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000805",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "5"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000501",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000806",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "6"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000601",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "6",
+                    "tls.handshake.sig_hash_sig": "1"
+                  }
+                }
+              },
+              "Extension: signed_certificate_timestamp (len=0)": {
+                "tls.handshake.extension.type": "18",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: key_share (len=43)": {
+                "tls.handshake.extension.type": "51",
+                "tls.handshake.extension.len": "43",
+                "Key Share extension": {
+                  "tls.handshake.extensions_key_share_client_length": "41",
+                  "Key Share Entry: Group: Reserved (GREASE), Key Exchange length: 1": {
+                    "tls.handshake.extensions_key_share_group": "10794",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "1",
+                    "tls.handshake.extensions_key_share_key_exchange": "00"
+                  },
+                  "Key Share Entry: Group: x25519, Key Exchange length: 32": {
+                    "tls.handshake.extensions_key_share_group": "29",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "32",
+                    "tls.handshake.extensions_key_share_key_exchange": "56:67:fb:df:1f:4c:27:4e:3c:f7:bc:5f:ea:70:d1:cb:ea:97:1f:23:69:82:62:d3:d9:7e:86:4f:79:e7:cc:1d"
+                  }
+                }
+              },
+              "Extension: psk_key_exchange_modes (len=2)": {
+                "tls.handshake.extension.type": "45",
+                "tls.handshake.extension.len": "2",
+                "tls.extension.psk_ke_modes_length": "1",
+                "tls.extension.psk_ke_mode": "1"
+              },
+              "Extension: supported_versions (len=11)": {
+                "tls.handshake.extension.type": "43",
+                "tls.handshake.extension.len": "11",
+                "tls.handshake.extensions.supported_versions_len": "10",
+                "tls.handshake.extensions.supported_version": "0x00004a4a",
+                "tls.handshake.extensions.supported_version": "0x00000304",
+                "tls.handshake.extensions.supported_version": "0x00000303",
+                "tls.handshake.extensions.supported_version": "0x00000302",
+                "tls.handshake.extensions.supported_version": "0x00000301"
+              },
+              "Extension: compress_certificate (len=3)": {
+                "tls.handshake.extension.type": "27",
+                "tls.handshake.extension.len": "3",
+                "tls.compress_certificate.algorithms_length": "2",
+                "tls.compress_certificate.algorithm": "2"
+              },
+              "Extension: Reserved (GREASE) (len=1)": {
+                "tls.handshake.extension.type": "23130",
+                "tls.handshake.extension.len": "1",
+                "tls.handshake.extension.data": "00"
+              },
+              "Extension: padding (len=206)": {
+                "tls.handshake.extension.type": "21",
+                "tls.handshake.extension.len": "206",
+                "tls.handshake.extensions_padding_data": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:04:29.687613625 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744669.687613625",
+          "frame.time_delta": "0.000514350",
+          "frame.time_delta_displayed": "0.002265387",
+          "frame.time_relative": "218.656063594",
+          "frame.number": "18000",
+          "frame.len": "583",
+          "frame.cap_len": "583",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:tls"
+        },
+        "eth": {
+          "eth.dst": "ca:0b:ad:ad:20:ba",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.dst.oui": "13241261",
+            "eth.addr": "ca:0b:ad:ad:20:ba",
+            "eth.addr_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.addr.oui": "13241261",
+            "eth.dst.lg": "1",
+            "eth.lg": "1",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "c8:09:a8:57:47:93",
+          "eth.src_tree": {
+            "eth.src_resolved": "IntelCor_57:47:93",
+            "eth.src.oui": "13109672",
+            "eth.src.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000000",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "0",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "569",
+          "ip.id": "0x0000a3da",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x0000f0b8",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.src_host": "192.168.1.26",
+          "ip.host": "192.168.1.26",
+          "ip.dst": "185.70.41.35",
+          "ip.addr": "185.70.41.35",
+          "ip.dst_host": "185.70.41.35",
+          "ip.host": "185.70.41.35"
+        },
+        "tcp": {
+          "tcp.srcport": "40284",
+          "tcp.dstport": "443",
+          "tcp.port": "40284",
+          "tcp.port": "443",
+          "tcp.stream": "196",
+          "tcp.len": "517",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "1469323689",
+          "tcp.nxtseq": "518",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "1767240423",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "511",
+          "tcp.window_size": "65408",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000a657",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:56:b8:96:db:f8:64:ea:17",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:56:b8:96:db:f8:64:ea:17",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1454937819",
+              "tcp.options.timestamp.tsecr": "4167363095"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.142256986",
+            "tcp.analysis.bytes_in_flight": "517",
+            "tcp.analysis.push_bytes_sent": "517"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.142771336",
+            "tcp.time_delta": "0.000514350"
+          },
+          "tcp.payload": "16:03:01:02:00:01:00:01:fc:03:03:be:82:53:4e:4a:ae:f4:68:ac:88:fe:15:47:3d:d4:29:bd:7c:40:51:c7:a0:32:d5:1d:79:79:f3:6d:76:fd:c7:20:68:2b:7e:4b:dd:fe:48:f8:87:7b:6c:37:cf:f8:f3:c6:fb:c5:10:39:b0:60:76:ff:41:3b:d6:e2:20:0d:a9:2d:00:20:1a:1a:13:01:13:02:13:03:c0:2b:c0:2f:c0:2c:c0:30:cc:a9:cc:a8:c0:13:c0:14:00:9c:00:9d:00:2f:00:35:01:00:01:93:ea:ea:00:00:00:00:00:13:00:11:00:00:0e:70:72:6f:74:6f:6e:6d:61:69:6c:2e:63:6f:6d:00:17:00:00:ff:01:00:01:00:00:0a:00:0a:00:08:7a:7a:00:1d:00:17:00:18:00:0b:00:02:01:00:00:23:00:00:00:10:00:0e:00:0c:02:68:32:08:68:74:74:70:2f:31:2e:31:00:05:00:05:01:00:00:00:00:00:0d:00:12:00:10:04:03:08:04:04:01:05:03:08:05:05:01:08:06:06:01:00:12:00:00:00:33:00:2b:00:29:7a:7a:00:01:00:00:1d:00:20:6f:db:27:d4:90:dd:2a:3e:e8:4c:66:bb:3f:ab:b7:83:7e:f4:ed:c3:13:54:7c:d9:21:3d:2b:fd:11:d9:0a:3a:00:2d:00:02:01:01:00:2b:00:0b:0a:ba:ba:03:04:03:03:03:02:03:01:00:1b:00:03:02:00:02:4a:4a:00:01:00:00:15:00:ce:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+        },
+        "tls": {
+          "tls.record": {
+            "tls.record.content_type": "22",
+            "tls.record.version": "0x00000301",
+            "tls.record.length": "512",
+            "tls.handshake": {
+              "tls.handshake.type": "1",
+              "tls.handshake.length": "508",
+              "tls.handshake.version": "0x00000303",
+              "tls.handshake.random": "be:82:53:4e:4a:ae:f4:68:ac:88:fe:15:47:3d:d4:29:bd:7c:40:51:c7:a0:32:d5:1d:79:79:f3:6d:76:fd:c7",
+              "tls.handshake.random_tree": {
+                "tls.handshake.random_time": "Apr 14, 2071 00:40:46.000000000 EDT",
+                "tls.handshake.random_bytes": "4a:ae:f4:68:ac:88:fe:15:47:3d:d4:29:bd:7c:40:51:c7:a0:32:d5:1d:79:79:f3:6d:76:fd:c7"
+              },
+              "tls.handshake.session_id_length": "32",
+              "tls.handshake.session_id": "68:2b:7e:4b:dd:fe:48:f8:87:7b:6c:37:cf:f8:f3:c6:fb:c5:10:39:b0:60:76:ff:41:3b:d6:e2:20:0d:a9:2d",
+              "tls.handshake.cipher_suites_length": "32",
+              "tls.handshake.ciphersuites": {
+                "tls.handshake.ciphersuite": "6682",
+                "tls.handshake.ciphersuite": "4865",
+                "tls.handshake.ciphersuite": "4866",
+                "tls.handshake.ciphersuite": "4867",
+                "tls.handshake.ciphersuite": "49195",
+                "tls.handshake.ciphersuite": "49199",
+                "tls.handshake.ciphersuite": "49196",
+                "tls.handshake.ciphersuite": "49200",
+                "tls.handshake.ciphersuite": "52393",
+                "tls.handshake.ciphersuite": "52392",
+                "tls.handshake.ciphersuite": "49171",
+                "tls.handshake.ciphersuite": "49172",
+                "tls.handshake.ciphersuite": "156",
+                "tls.handshake.ciphersuite": "157",
+                "tls.handshake.ciphersuite": "47",
+                "tls.handshake.ciphersuite": "53"
+              },
+              "tls.handshake.comp_methods_length": "1",
+              "tls.handshake.comp_methods": {
+                "tls.handshake.comp_method": "0"
+              },
+              "tls.handshake.extensions_length": "403",
+              "Extension: Reserved (GREASE) (len=0)": {
+                "tls.handshake.extension.type": "60138",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: server_name (len=19)": {
+                "tls.handshake.extension.type": "0",
+                "tls.handshake.extension.len": "19",
+                "Server Name Indication extension": {
+                  "tls.handshake.extensions_server_name_list_len": "17",
+                  "tls.handshake.extensions_server_name_type": "0",
+                  "tls.handshake.extensions_server_name_len": "14",
+                  "tls.handshake.extensions_server_name": "protonmail.com"
+                }
+              },
+              "Extension: extended_master_secret (len=0)": {
+                "tls.handshake.extension.type": "23",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: renegotiation_info (len=1)": {
+                "tls.handshake.extension.type": "65281",
+                "tls.handshake.extension.len": "1",
+                "Renegotiation Info extension": {
+                  "tls.handshake.extensions_reneg_info_len": "0"
+                }
+              },
+              "Extension: supported_groups (len=10)": {
+                "tls.handshake.extension.type": "10",
+                "tls.handshake.extension.len": "10",
+                "tls.handshake.extensions_supported_groups_length": "8",
+                "tls.handshake.extensions_supported_groups": {
+                  "tls.handshake.extensions_supported_group": "0x00007a7a",
+                  "tls.handshake.extensions_supported_group": "0x0000001d",
+                  "tls.handshake.extensions_supported_group": "0x00000017",
+                  "tls.handshake.extensions_supported_group": "0x00000018"
+                }
+              },
+              "Extension: ec_point_formats (len=2)": {
+                "tls.handshake.extension.type": "11",
+                "tls.handshake.extension.len": "2",
+                "tls.handshake.extensions_ec_point_formats_length": "1",
+                "tls.handshake.extensions_ec_point_formats": {
+                  "tls.handshake.extensions_ec_point_format": "0"
+                }
+              },
+              "Extension: session_ticket (len=0)": {
+                "tls.handshake.extension.type": "35",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: application_layer_protocol_negotiation (len=14)": {
+                "tls.handshake.extension.type": "16",
+                "tls.handshake.extension.len": "14",
+                "tls.handshake.extensions_alpn_len": "12",
+                "tls.handshake.extensions_alpn_list": {
+                  "tls.handshake.extensions_alpn_str_len": "2",
+                  "tls.handshake.extensions_alpn_str": "h2",
+                  "tls.handshake.extensions_alpn_str_len": "8",
+                  "tls.handshake.extensions_alpn_str": "http/1.1"
+                }
+              },
+              "Extension: status_request (len=5)": {
+                "tls.handshake.extension.type": "5",
+                "tls.handshake.extension.len": "5",
+                "tls.handshake.extensions_status_request_type": "1",
+                "tls.handshake.extensions_status_request_responder_ids_len": "0",
+                "tls.handshake.extensions_status_request_exts_len": "0"
+              },
+              "Extension: signature_algorithms (len=18)": {
+                "tls.handshake.extension.type": "13",
+                "tls.handshake.extension.len": "18",
+                "tls.handshake.sig_hash_alg_len": "16",
+                "tls.handshake.sig_hash_algs": {
+                  "tls.handshake.sig_hash_alg": "0x00000403",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000804",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "4"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000401",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000503",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000805",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "5"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000501",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000806",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "6"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000601",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "6",
+                    "tls.handshake.sig_hash_sig": "1"
+                  }
+                }
+              },
+              "Extension: signed_certificate_timestamp (len=0)": {
+                "tls.handshake.extension.type": "18",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: key_share (len=43)": {
+                "tls.handshake.extension.type": "51",
+                "tls.handshake.extension.len": "43",
+                "Key Share extension": {
+                  "tls.handshake.extensions_key_share_client_length": "41",
+                  "Key Share Entry: Group: Reserved (GREASE), Key Exchange length: 1": {
+                    "tls.handshake.extensions_key_share_group": "31354",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "1",
+                    "tls.handshake.extensions_key_share_key_exchange": "00"
+                  },
+                  "Key Share Entry: Group: x25519, Key Exchange length: 32": {
+                    "tls.handshake.extensions_key_share_group": "29",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "32",
+                    "tls.handshake.extensions_key_share_key_exchange": "6f:db:27:d4:90:dd:2a:3e:e8:4c:66:bb:3f:ab:b7:83:7e:f4:ed:c3:13:54:7c:d9:21:3d:2b:fd:11:d9:0a:3a"
+                  }
+                }
+              },
+              "Extension: psk_key_exchange_modes (len=2)": {
+                "tls.handshake.extension.type": "45",
+                "tls.handshake.extension.len": "2",
+                "tls.extension.psk_ke_modes_length": "1",
+                "tls.extension.psk_ke_mode": "1"
+              },
+              "Extension: supported_versions (len=11)": {
+                "tls.handshake.extension.type": "43",
+                "tls.handshake.extension.len": "11",
+                "tls.handshake.extensions.supported_versions_len": "10",
+                "tls.handshake.extensions.supported_version": "0x0000baba",
+                "tls.handshake.extensions.supported_version": "0x00000304",
+                "tls.handshake.extensions.supported_version": "0x00000303",
+                "tls.handshake.extensions.supported_version": "0x00000302",
+                "tls.handshake.extensions.supported_version": "0x00000301"
+              },
+              "Extension: compress_certificate (len=3)": {
+                "tls.handshake.extension.type": "27",
+                "tls.handshake.extension.len": "3",
+                "tls.compress_certificate.algorithms_length": "2",
+                "tls.compress_certificate.algorithm": "2"
+              },
+              "Extension: Reserved (GREASE) (len=1)": {
+                "tls.handshake.extension.type": "19018",
+                "tls.handshake.extension.len": "1",
+                "tls.handshake.extension.data": "00"
+              },
+              "Extension: padding (len=206)": {
+                "tls.handshake.extension.type": "21",
+                "tls.handshake.extension.len": "206",
+                "tls.handshake.extensions_padding_data": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:04:32.600262182 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744672.600262182",
+          "frame.time_delta": "0.000749538",
+          "frame.time_delta_displayed": "2.912648557",
+          "frame.time_relative": "221.568712151",
+          "frame.number": "18144",
+          "frame.len": "583",
+          "frame.cap_len": "583",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:tls"
+        },
+        "eth": {
+          "eth.dst": "ca:0b:ad:ad:20:ba",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.dst.oui": "13241261",
+            "eth.addr": "ca:0b:ad:ad:20:ba",
+            "eth.addr_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.addr.oui": "13241261",
+            "eth.dst.lg": "1",
+            "eth.lg": "1",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "c8:09:a8:57:47:93",
+          "eth.src_tree": {
+            "eth.src_resolved": "IntelCor_57:47:93",
+            "eth.src.oui": "13109672",
+            "eth.src.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000000",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "0",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "569",
+          "ip.id": "0x0000369f",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x00005df4",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.src_host": "192.168.1.26",
+          "ip.host": "192.168.1.26",
+          "ip.dst": "185.70.41.35",
+          "ip.addr": "185.70.41.35",
+          "ip.dst_host": "185.70.41.35",
+          "ip.host": "185.70.41.35"
+        },
+        "tcp": {
+          "tcp.srcport": "40292",
+          "tcp.dstport": "443",
+          "tcp.port": "40292",
+          "tcp.port": "443",
+          "tcp.stream": "200",
+          "tcp.len": "517",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "31490868",
+          "tcp.nxtseq": "518",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "1072829113",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "511",
+          "tcp.window_size": "65408",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000a657",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:56:b8:a2:3c:f8:64:f5:a4",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:56:b8:a2:3c:f8:64:f5:a4",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1454940732",
+              "tcp.options.timestamp.tsecr": "4167366052"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.106468800",
+            "tcp.analysis.bytes_in_flight": "517",
+            "tcp.analysis.push_bytes_sent": "517"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.107225712",
+            "tcp.time_delta": "0.000756912"
+          },
+          "tcp.payload": "16:03:01:02:00:01:00:01:fc:03:03:49:2f:c3:d9:32:fb:64:26:bb:9d:7a:08:7c:c5:e2:ae:8f:d4:a0:f6:82:6f:87:36:fb:0f:1a:d2:25:b9:62:f4:20:b7:0b:4d:d6:7f:88:b0:79:5d:10:d4:44:a4:3e:e6:01:9a:54:83:7e:ec:cf:42:be:c9:f3:51:60:08:59:2a:c9:00:20:da:da:13:01:13:02:13:03:c0:2b:c0:2f:c0:2c:c0:30:cc:a9:cc:a8:c0:13:c0:14:00:9c:00:9d:00:2f:00:35:01:00:01:93:ba:ba:00:00:00:00:00:13:00:11:00:00:0e:70:72:6f:74:6f:6e:6d:61:69:6c:2e:63:6f:6d:00:17:00:00:ff:01:00:01:00:00:0a:00:0a:00:08:aa:aa:00:1d:00:17:00:18:00:0b:00:02:01:00:00:23:00:00:00:10:00:0e:00:0c:02:68:32:08:68:74:74:70:2f:31:2e:31:00:05:00:05:01:00:00:00:00:00:0d:00:12:00:10:04:03:08:04:04:01:05:03:08:05:05:01:08:06:06:01:00:12:00:00:00:33:00:2b:00:29:aa:aa:00:01:00:00:1d:00:20:c8:71:b2:9e:93:16:0b:7a:90:78:50:e6:2b:90:88:55:94:20:f2:b2:5e:c5:21:80:22:2d:76:9b:37:33:60:11:00:2d:00:02:01:01:00:2b:00:0b:0a:2a:2a:03:04:03:03:03:02:03:01:00:1b:00:03:02:00:02:4a:4a:00:01:00:00:15:00:6f:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:29:00:5b:00:26:00:20:0a:d0:c5:7e:88:12:b9:b5:3d:ed:22:14:4f:d4:e4:0a:c0:a9:54:f0:40:73:2b:b8:98:09:8e:4d:08:7b:cc:2b:90:f5:57:57:00:31:30:2b:5c:c3:58:25:1d:2d:1e:66:f0:70:ca:7b:b1:f4:72:b5:e0:89:40:2c:bf:33:ee:c7:f2:79:70:98:e5:50:ea:1e:59:2c:13:dc:7a:a5:18:46:db:88:5b:6b:d0:2d:cc"
+        },
+        "tls": {
+          "tls.record": {
+            "tls.record.content_type": "22",
+            "tls.record.version": "0x00000301",
+            "tls.record.length": "512",
+            "tls.handshake": {
+              "tls.handshake.type": "1",
+              "tls.handshake.length": "508",
+              "tls.handshake.version": "0x00000303",
+              "tls.handshake.random": "49:2f:c3:d9:32:fb:64:26:bb:9d:7a:08:7c:c5:e2:ae:8f:d4:a0:f6:82:6f:87:36:fb:0f:1a:d2:25:b9:62:f4",
+              "tls.handshake.random_tree": {
+                "tls.handshake.random_time": "Nov 28, 2008 05:11:37.000000000 EST",
+                "tls.handshake.random_bytes": "32:fb:64:26:bb:9d:7a:08:7c:c5:e2:ae:8f:d4:a0:f6:82:6f:87:36:fb:0f:1a:d2:25:b9:62:f4"
+              },
+              "tls.handshake.session_id_length": "32",
+              "tls.handshake.session_id": "b7:0b:4d:d6:7f:88:b0:79:5d:10:d4:44:a4:3e:e6:01:9a:54:83:7e:ec:cf:42:be:c9:f3:51:60:08:59:2a:c9",
+              "tls.handshake.cipher_suites_length": "32",
+              "tls.handshake.ciphersuites": {
+                "tls.handshake.ciphersuite": "56026",
+                "tls.handshake.ciphersuite": "4865",
+                "tls.handshake.ciphersuite": "4866",
+                "tls.handshake.ciphersuite": "4867",
+                "tls.handshake.ciphersuite": "49195",
+                "tls.handshake.ciphersuite": "49199",
+                "tls.handshake.ciphersuite": "49196",
+                "tls.handshake.ciphersuite": "49200",
+                "tls.handshake.ciphersuite": "52393",
+                "tls.handshake.ciphersuite": "52392",
+                "tls.handshake.ciphersuite": "49171",
+                "tls.handshake.ciphersuite": "49172",
+                "tls.handshake.ciphersuite": "156",
+                "tls.handshake.ciphersuite": "157",
+                "tls.handshake.ciphersuite": "47",
+                "tls.handshake.ciphersuite": "53"
+              },
+              "tls.handshake.comp_methods_length": "1",
+              "tls.handshake.comp_methods": {
+                "tls.handshake.comp_method": "0"
+              },
+              "tls.handshake.extensions_length": "403",
+              "Extension: Reserved (GREASE) (len=0)": {
+                "tls.handshake.extension.type": "47802",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: server_name (len=19)": {
+                "tls.handshake.extension.type": "0",
+                "tls.handshake.extension.len": "19",
+                "Server Name Indication extension": {
+                  "tls.handshake.extensions_server_name_list_len": "17",
+                  "tls.handshake.extensions_server_name_type": "0",
+                  "tls.handshake.extensions_server_name_len": "14",
+                  "tls.handshake.extensions_server_name": "protonmail.com"
+                }
+              },
+              "Extension: extended_master_secret (len=0)": {
+                "tls.handshake.extension.type": "23",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: renegotiation_info (len=1)": {
+                "tls.handshake.extension.type": "65281",
+                "tls.handshake.extension.len": "1",
+                "Renegotiation Info extension": {
+                  "tls.handshake.extensions_reneg_info_len": "0"
+                }
+              },
+              "Extension: supported_groups (len=10)": {
+                "tls.handshake.extension.type": "10",
+                "tls.handshake.extension.len": "10",
+                "tls.handshake.extensions_supported_groups_length": "8",
+                "tls.handshake.extensions_supported_groups": {
+                  "tls.handshake.extensions_supported_group": "0x0000aaaa",
+                  "tls.handshake.extensions_supported_group": "0x0000001d",
+                  "tls.handshake.extensions_supported_group": "0x00000017",
+                  "tls.handshake.extensions_supported_group": "0x00000018"
+                }
+              },
+              "Extension: ec_point_formats (len=2)": {
+                "tls.handshake.extension.type": "11",
+                "tls.handshake.extension.len": "2",
+                "tls.handshake.extensions_ec_point_formats_length": "1",
+                "tls.handshake.extensions_ec_point_formats": {
+                  "tls.handshake.extensions_ec_point_format": "0"
+                }
+              },
+              "Extension: session_ticket (len=0)": {
+                "tls.handshake.extension.type": "35",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: application_layer_protocol_negotiation (len=14)": {
+                "tls.handshake.extension.type": "16",
+                "tls.handshake.extension.len": "14",
+                "tls.handshake.extensions_alpn_len": "12",
+                "tls.handshake.extensions_alpn_list": {
+                  "tls.handshake.extensions_alpn_str_len": "2",
+                  "tls.handshake.extensions_alpn_str": "h2",
+                  "tls.handshake.extensions_alpn_str_len": "8",
+                  "tls.handshake.extensions_alpn_str": "http/1.1"
+                }
+              },
+              "Extension: status_request (len=5)": {
+                "tls.handshake.extension.type": "5",
+                "tls.handshake.extension.len": "5",
+                "tls.handshake.extensions_status_request_type": "1",
+                "tls.handshake.extensions_status_request_responder_ids_len": "0",
+                "tls.handshake.extensions_status_request_exts_len": "0"
+              },
+              "Extension: signature_algorithms (len=18)": {
+                "tls.handshake.extension.type": "13",
+                "tls.handshake.extension.len": "18",
+                "tls.handshake.sig_hash_alg_len": "16",
+                "tls.handshake.sig_hash_algs": {
+                  "tls.handshake.sig_hash_alg": "0x00000403",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000804",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "4"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000401",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000503",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000805",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "5"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000501",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000806",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "6"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000601",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "6",
+                    "tls.handshake.sig_hash_sig": "1"
+                  }
+                }
+              },
+              "Extension: signed_certificate_timestamp (len=0)": {
+                "tls.handshake.extension.type": "18",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: key_share (len=43)": {
+                "tls.handshake.extension.type": "51",
+                "tls.handshake.extension.len": "43",
+                "Key Share extension": {
+                  "tls.handshake.extensions_key_share_client_length": "41",
+                  "Key Share Entry: Group: Reserved (GREASE), Key Exchange length: 1": {
+                    "tls.handshake.extensions_key_share_group": "43690",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "1",
+                    "tls.handshake.extensions_key_share_key_exchange": "00"
+                  },
+                  "Key Share Entry: Group: x25519, Key Exchange length: 32": {
+                    "tls.handshake.extensions_key_share_group": "29",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "32",
+                    "tls.handshake.extensions_key_share_key_exchange": "c8:71:b2:9e:93:16:0b:7a:90:78:50:e6:2b:90:88:55:94:20:f2:b2:5e:c5:21:80:22:2d:76:9b:37:33:60:11"
+                  }
+                }
+              },
+              "Extension: psk_key_exchange_modes (len=2)": {
+                "tls.handshake.extension.type": "45",
+                "tls.handshake.extension.len": "2",
+                "tls.extension.psk_ke_modes_length": "1",
+                "tls.extension.psk_ke_mode": "1"
+              },
+              "Extension: supported_versions (len=11)": {
+                "tls.handshake.extension.type": "43",
+                "tls.handshake.extension.len": "11",
+                "tls.handshake.extensions.supported_versions_len": "10",
+                "tls.handshake.extensions.supported_version": "0x00002a2a",
+                "tls.handshake.extensions.supported_version": "0x00000304",
+                "tls.handshake.extensions.supported_version": "0x00000303",
+                "tls.handshake.extensions.supported_version": "0x00000302",
+                "tls.handshake.extensions.supported_version": "0x00000301"
+              },
+              "Extension: compress_certificate (len=3)": {
+                "tls.handshake.extension.type": "27",
+                "tls.handshake.extension.len": "3",
+                "tls.compress_certificate.algorithms_length": "2",
+                "tls.compress_certificate.algorithm": "2"
+              },
+              "Extension: Reserved (GREASE) (len=1)": {
+                "tls.handshake.extension.type": "19018",
+                "tls.handshake.extension.len": "1",
+                "tls.handshake.extension.data": "00"
+              },
+              "Extension: padding (len=111)": {
+                "tls.handshake.extension.type": "21",
+                "tls.handshake.extension.len": "111",
+                "tls.handshake.extensions_padding_data": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+              },
+              "Extension: pre_shared_key (len=91)": {
+                "tls.handshake.extension.type": "41",
+                "tls.handshake.extension.len": "91",
+                "Pre-Shared Key extension": {
+                  "tls.handshake.extensions.psk.identities.length": "38",
+                  "PSK Identity (length: 32)": {
+                    "tls.handshake.extensions.psk.identity.identity_length": "32",
+                    "tls.handshake.extensions.psk.identity.identity": "0a:d0:c5:7e:88:12:b9:b5:3d:ed:22:14:4f:d4:e4:0a:c0:a9:54:f0:40:73:2b:b8:98:09:8e:4d:08:7b:cc:2b",
+                    "tls.handshake.extensions.psk.identity.obfuscated_ticket_age": "2431997783"
+                  },
+                  "tls.handshake.extensions.psk.binders_len": "49",
+                  "tls.handshake.extensions.psk.binders": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:04:32.600430584 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744672.600430584",
+          "frame.time_delta": "0.000168402",
+          "frame.time_delta_displayed": "0.000168402",
+          "frame.time_relative": "221.568880553",
+          "frame.number": "18145",
+          "frame.len": "583",
+          "frame.cap_len": "583",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:tls"
+        },
+        "eth": {
+          "eth.dst": "ca:0b:ad:ad:20:ba",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.dst.oui": "13241261",
+            "eth.addr": "ca:0b:ad:ad:20:ba",
+            "eth.addr_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.addr.oui": "13241261",
+            "eth.dst.lg": "1",
+            "eth.lg": "1",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "c8:09:a8:57:47:93",
+          "eth.src_tree": {
+            "eth.src_resolved": "IntelCor_57:47:93",
+            "eth.src.oui": "13109672",
+            "eth.src.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000000",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "0",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "569",
+          "ip.id": "0x00009a05",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x0000fa8d",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.src_host": "192.168.1.26",
+          "ip.host": "192.168.1.26",
+          "ip.dst": "185.70.41.35",
+          "ip.addr": "185.70.41.35",
+          "ip.dst_host": "185.70.41.35",
+          "ip.host": "185.70.41.35"
+        },
+        "tcp": {
+          "tcp.srcport": "40294",
+          "tcp.dstport": "443",
+          "tcp.port": "40294",
+          "tcp.port": "443",
+          "tcp.stream": "201",
+          "tcp.len": "517",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "2954230080",
+          "tcp.nxtseq": "518",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "3902869543",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "511",
+          "tcp.window_size": "65408",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000a657",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:56:b8:a2:3c:f8:64:f5:a9",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:56:b8:a2:3c:f8:64:f5:a9",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1454940732",
+              "tcp.options.timestamp.tsecr": "4167366057"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.106259413",
+            "tcp.analysis.bytes_in_flight": "517",
+            "tcp.analysis.push_bytes_sent": "517"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.107177353",
+            "tcp.time_delta": "0.000917940"
+          },
+          "tcp.payload": "16:03:01:02:00:01:00:01:fc:03:03:72:1f:28:c2:a4:07:81:0a:bf:db:f7:d9:c8:be:8e:3f:45:2c:c8:0d:52:e6:f7:38:fa:15:8e:52:1f:f2:f2:0e:20:fb:e0:ef:c2:a8:17:d4:70:16:4f:e3:b7:7d:b2:9f:1a:be:41:1f:f7:54:03:cb:77:c9:dc:2a:41:cc:8e:04:20:00:20:8a:8a:13:01:13:02:13:03:c0:2b:c0:2f:c0:2c:c0:30:cc:a9:cc:a8:c0:13:c0:14:00:9c:00:9d:00:2f:00:35:01:00:01:93:ca:ca:00:00:00:00:00:13:00:11:00:00:0e:70:72:6f:74:6f:6e:6d:61:69:6c:2e:63:6f:6d:00:17:00:00:ff:01:00:01:00:00:0a:00:0a:00:08:ea:ea:00:1d:00:17:00:18:00:0b:00:02:01:00:00:23:00:00:00:10:00:0e:00:0c:02:68:32:08:68:74:74:70:2f:31:2e:31:00:05:00:05:01:00:00:00:00:00:0d:00:12:00:10:04:03:08:04:04:01:05:03:08:05:05:01:08:06:06:01:00:12:00:00:00:33:00:2b:00:29:ea:ea:00:01:00:00:1d:00:20:02:ba:9e:16:2e:3e:33:eb:68:8d:fb:23:5d:e9:62:fc:75:a0:70:7a:0f:d9:71:bb:2f:41:ef:8d:7a:fb:6c:25:00:2d:00:02:01:01:00:2b:00:0b:0a:ea:ea:03:04:03:03:03:02:03:01:00:1b:00:03:02:00:02:da:da:00:01:00:00:15:00:6f:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:29:00:5b:00:26:00:20:7a:1a:aa:ee:75:85:32:25:4e:e0:0e:6e:35:1d:87:3a:67:56:00:c3:b3:98:55:fc:27:60:dd:81:9b:86:23:03:fd:bf:71:ec:00:31:30:1e:f3:83:1e:84:11:17:d6:7e:94:19:fd:9b:3a:f9:97:e3:a8:a2:7a:c9:94:f0:d1:2c:e9:3a:ec:d4:12:2b:8a:c6:d2:c1:e7:38:f3:38:5e:74:0f:4b:35:30:c9:6e:a1"
+        },
+        "tls": {
+          "tls.record": {
+            "tls.record.content_type": "22",
+            "tls.record.version": "0x00000301",
+            "tls.record.length": "512",
+            "tls.handshake": {
+              "tls.handshake.type": "1",
+              "tls.handshake.length": "508",
+              "tls.handshake.version": "0x00000303",
+              "tls.handshake.random": "72:1f:28:c2:a4:07:81:0a:bf:db:f7:d9:c8:be:8e:3f:45:2c:c8:0d:52:e6:f7:38:fa:15:8e:52:1f:f2:f2:0e",
+              "tls.handshake.random_tree": {
+                "tls.handshake.random_time": "Sep  3, 2030 01:44:34.000000000 EDT",
+                "tls.handshake.random_bytes": "a4:07:81:0a:bf:db:f7:d9:c8:be:8e:3f:45:2c:c8:0d:52:e6:f7:38:fa:15:8e:52:1f:f2:f2:0e"
+              },
+              "tls.handshake.session_id_length": "32",
+              "tls.handshake.session_id": "fb:e0:ef:c2:a8:17:d4:70:16:4f:e3:b7:7d:b2:9f:1a:be:41:1f:f7:54:03:cb:77:c9:dc:2a:41:cc:8e:04:20",
+              "tls.handshake.cipher_suites_length": "32",
+              "tls.handshake.ciphersuites": {
+                "tls.handshake.ciphersuite": "35466",
+                "tls.handshake.ciphersuite": "4865",
+                "tls.handshake.ciphersuite": "4866",
+                "tls.handshake.ciphersuite": "4867",
+                "tls.handshake.ciphersuite": "49195",
+                "tls.handshake.ciphersuite": "49199",
+                "tls.handshake.ciphersuite": "49196",
+                "tls.handshake.ciphersuite": "49200",
+                "tls.handshake.ciphersuite": "52393",
+                "tls.handshake.ciphersuite": "52392",
+                "tls.handshake.ciphersuite": "49171",
+                "tls.handshake.ciphersuite": "49172",
+                "tls.handshake.ciphersuite": "156",
+                "tls.handshake.ciphersuite": "157",
+                "tls.handshake.ciphersuite": "47",
+                "tls.handshake.ciphersuite": "53"
+              },
+              "tls.handshake.comp_methods_length": "1",
+              "tls.handshake.comp_methods": {
+                "tls.handshake.comp_method": "0"
+              },
+              "tls.handshake.extensions_length": "403",
+              "Extension: Reserved (GREASE) (len=0)": {
+                "tls.handshake.extension.type": "51914",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: server_name (len=19)": {
+                "tls.handshake.extension.type": "0",
+                "tls.handshake.extension.len": "19",
+                "Server Name Indication extension": {
+                  "tls.handshake.extensions_server_name_list_len": "17",
+                  "tls.handshake.extensions_server_name_type": "0",
+                  "tls.handshake.extensions_server_name_len": "14",
+                  "tls.handshake.extensions_server_name": "protonmail.com"
+                }
+              },
+              "Extension: extended_master_secret (len=0)": {
+                "tls.handshake.extension.type": "23",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: renegotiation_info (len=1)": {
+                "tls.handshake.extension.type": "65281",
+                "tls.handshake.extension.len": "1",
+                "Renegotiation Info extension": {
+                  "tls.handshake.extensions_reneg_info_len": "0"
+                }
+              },
+              "Extension: supported_groups (len=10)": {
+                "tls.handshake.extension.type": "10",
+                "tls.handshake.extension.len": "10",
+                "tls.handshake.extensions_supported_groups_length": "8",
+                "tls.handshake.extensions_supported_groups": {
+                  "tls.handshake.extensions_supported_group": "0x0000eaea",
+                  "tls.handshake.extensions_supported_group": "0x0000001d",
+                  "tls.handshake.extensions_supported_group": "0x00000017",
+                  "tls.handshake.extensions_supported_group": "0x00000018"
+                }
+              },
+              "Extension: ec_point_formats (len=2)": {
+                "tls.handshake.extension.type": "11",
+                "tls.handshake.extension.len": "2",
+                "tls.handshake.extensions_ec_point_formats_length": "1",
+                "tls.handshake.extensions_ec_point_formats": {
+                  "tls.handshake.extensions_ec_point_format": "0"
+                }
+              },
+              "Extension: session_ticket (len=0)": {
+                "tls.handshake.extension.type": "35",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: application_layer_protocol_negotiation (len=14)": {
+                "tls.handshake.extension.type": "16",
+                "tls.handshake.extension.len": "14",
+                "tls.handshake.extensions_alpn_len": "12",
+                "tls.handshake.extensions_alpn_list": {
+                  "tls.handshake.extensions_alpn_str_len": "2",
+                  "tls.handshake.extensions_alpn_str": "h2",
+                  "tls.handshake.extensions_alpn_str_len": "8",
+                  "tls.handshake.extensions_alpn_str": "http/1.1"
+                }
+              },
+              "Extension: status_request (len=5)": {
+                "tls.handshake.extension.type": "5",
+                "tls.handshake.extension.len": "5",
+                "tls.handshake.extensions_status_request_type": "1",
+                "tls.handshake.extensions_status_request_responder_ids_len": "0",
+                "tls.handshake.extensions_status_request_exts_len": "0"
+              },
+              "Extension: signature_algorithms (len=18)": {
+                "tls.handshake.extension.type": "13",
+                "tls.handshake.extension.len": "18",
+                "tls.handshake.sig_hash_alg_len": "16",
+                "tls.handshake.sig_hash_algs": {
+                  "tls.handshake.sig_hash_alg": "0x00000403",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000804",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "4"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000401",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000503",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000805",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "5"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000501",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000806",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "6"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000601",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "6",
+                    "tls.handshake.sig_hash_sig": "1"
+                  }
+                }
+              },
+              "Extension: signed_certificate_timestamp (len=0)": {
+                "tls.handshake.extension.type": "18",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: key_share (len=43)": {
+                "tls.handshake.extension.type": "51",
+                "tls.handshake.extension.len": "43",
+                "Key Share extension": {
+                  "tls.handshake.extensions_key_share_client_length": "41",
+                  "Key Share Entry: Group: Reserved (GREASE), Key Exchange length: 1": {
+                    "tls.handshake.extensions_key_share_group": "60138",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "1",
+                    "tls.handshake.extensions_key_share_key_exchange": "00"
+                  },
+                  "Key Share Entry: Group: x25519, Key Exchange length: 32": {
+                    "tls.handshake.extensions_key_share_group": "29",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "32",
+                    "tls.handshake.extensions_key_share_key_exchange": "02:ba:9e:16:2e:3e:33:eb:68:8d:fb:23:5d:e9:62:fc:75:a0:70:7a:0f:d9:71:bb:2f:41:ef:8d:7a:fb:6c:25"
+                  }
+                }
+              },
+              "Extension: psk_key_exchange_modes (len=2)": {
+                "tls.handshake.extension.type": "45",
+                "tls.handshake.extension.len": "2",
+                "tls.extension.psk_ke_modes_length": "1",
+                "tls.extension.psk_ke_mode": "1"
+              },
+              "Extension: supported_versions (len=11)": {
+                "tls.handshake.extension.type": "43",
+                "tls.handshake.extension.len": "11",
+                "tls.handshake.extensions.supported_versions_len": "10",
+                "tls.handshake.extensions.supported_version": "0x0000eaea",
+                "tls.handshake.extensions.supported_version": "0x00000304",
+                "tls.handshake.extensions.supported_version": "0x00000303",
+                "tls.handshake.extensions.supported_version": "0x00000302",
+                "tls.handshake.extensions.supported_version": "0x00000301"
+              },
+              "Extension: compress_certificate (len=3)": {
+                "tls.handshake.extension.type": "27",
+                "tls.handshake.extension.len": "3",
+                "tls.compress_certificate.algorithms_length": "2",
+                "tls.compress_certificate.algorithm": "2"
+              },
+              "Extension: Reserved (GREASE) (len=1)": {
+                "tls.handshake.extension.type": "56026",
+                "tls.handshake.extension.len": "1",
+                "tls.handshake.extension.data": "00"
+              },
+              "Extension: padding (len=111)": {
+                "tls.handshake.extension.type": "21",
+                "tls.handshake.extension.len": "111",
+                "tls.handshake.extensions_padding_data": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+              },
+              "Extension: pre_shared_key (len=91)": {
+                "tls.handshake.extension.type": "41",
+                "tls.handshake.extension.len": "91",
+                "Pre-Shared Key extension": {
+                  "tls.handshake.extensions.psk.identities.length": "38",
+                  "PSK Identity (length: 32)": {
+                    "tls.handshake.extensions.psk.identity.identity_length": "32",
+                    "tls.handshake.extensions.psk.identity.identity": "7a:1a:aa:ee:75:85:32:25:4e:e0:0e:6e:35:1d:87:3a:67:56:00:c3:b3:98:55:fc:27:60:dd:81:9b:86:23:03",
+                    "tls.handshake.extensions.psk.identity.obfuscated_ticket_age": "4257182188"
+                  },
+                  "tls.handshake.extensions.psk.binders_len": "49",
+                  "tls.handshake.extensions.psk.binders": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:04:32.600800757 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744672.600800757",
+          "frame.time_delta": "0.000370173",
+          "frame.time_delta_displayed": "0.000370173",
+          "frame.time_relative": "221.569250726",
+          "frame.number": "18146",
+          "frame.len": "583",
+          "frame.cap_len": "583",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:tls"
+        },
+        "eth": {
+          "eth.dst": "ca:0b:ad:ad:20:ba",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.dst.oui": "13241261",
+            "eth.addr": "ca:0b:ad:ad:20:ba",
+            "eth.addr_resolved": "ca:0b:ad:ad:20:ba",
+            "eth.addr.oui": "13241261",
+            "eth.dst.lg": "1",
+            "eth.lg": "1",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "c8:09:a8:57:47:93",
+          "eth.src_tree": {
+            "eth.src_resolved": "IntelCor_57:47:93",
+            "eth.src.oui": "13109672",
+            "eth.src.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000000",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "0",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "569",
+          "ip.id": "0x0000b583",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x0000df0f",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.src_host": "192.168.1.26",
+          "ip.host": "192.168.1.26",
+          "ip.dst": "185.70.41.35",
+          "ip.addr": "185.70.41.35",
+          "ip.dst_host": "185.70.41.35",
+          "ip.host": "185.70.41.35"
+        },
+        "tcp": {
+          "tcp.srcport": "40290",
+          "tcp.dstport": "443",
+          "tcp.port": "40290",
+          "tcp.port": "443",
+          "tcp.stream": "199",
+          "tcp.len": "517",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "2727375642",
+          "tcp.nxtseq": "518",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "1991627341",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "511",
+          "tcp.window_size": "65408",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000a657",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:56:b8:a2:3d:f8:64:f5:a4",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:56:b8:a2:3d:f8:64:f5:a4",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1454940733",
+              "tcp.options.timestamp.tsecr": "4167366052"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.106819930",
+            "tcp.analysis.bytes_in_flight": "517",
+            "tcp.analysis.push_bytes_sent": "517"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.108127355",
+            "tcp.time_delta": "0.001307425"
+          },
+          "tcp.payload": "16:03:01:02:00:01:00:01:fc:03:03:dd:fb:32:c9:6b:a4:50:de:e4:2f:20:89:44:d9:6b:eb:ad:75:12:98:ce:34:71:cb:8e:06:ee:11:2e:37:49:3c:20:c6:9f:5a:33:78:dd:93:06:bf:97:22:d5:04:9d:e6:ec:36:8a:79:7b:0c:63:19:4d:35:34:2e:bd:c2:4a:bd:7e:00:20:fa:fa:13:01:13:02:13:03:c0:2b:c0:2f:c0:2c:c0:30:cc:a9:cc:a8:c0:13:c0:14:00:9c:00:9d:00:2f:00:35:01:00:01:93:8a:8a:00:00:00:00:00:13:00:11:00:00:0e:70:72:6f:74:6f:6e:6d:61:69:6c:2e:63:6f:6d:00:17:00:00:ff:01:00:01:00:00:0a:00:0a:00:08:3a:3a:00:1d:00:17:00:18:00:0b:00:02:01:00:00:23:00:00:00:10:00:0e:00:0c:02:68:32:08:68:74:74:70:2f:31:2e:31:00:05:00:05:01:00:00:00:00:00:0d:00:12:00:10:04:03:08:04:04:01:05:03:08:05:05:01:08:06:06:01:00:12:00:00:00:33:00:2b:00:29:3a:3a:00:01:00:00:1d:00:20:b0:64:96:15:d1:93:4c:6c:86:84:65:f4:f9:07:09:ae:86:f3:04:95:b9:51:34:f1:a0:76:ba:ce:0c:97:7f:2c:00:2d:00:02:01:01:00:2b:00:0b:0a:ba:ba:03:04:03:03:03:02:03:01:00:1b:00:03:02:00:02:ea:ea:00:01:00:00:15:00:ce:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+        },
+        "tls": {
+          "tls.record": {
+            "tls.record.content_type": "22",
+            "tls.record.version": "0x00000301",
+            "tls.record.length": "512",
+            "tls.handshake": {
+              "tls.handshake.type": "1",
+              "tls.handshake.length": "508",
+              "tls.handshake.version": "0x00000303",
+              "tls.handshake.random": "dd:fb:32:c9:6b:a4:50:de:e4:2f:20:89:44:d9:6b:eb:ad:75:12:98:ce:34:71:cb:8e:06:ee:11:2e:37:49:3c",
+              "tls.handshake.random_tree": {
+                "tls.handshake.random_time": "Jan  6, 2088 06:34:33.000000000 EST",
+                "tls.handshake.random_bytes": "6b:a4:50:de:e4:2f:20:89:44:d9:6b:eb:ad:75:12:98:ce:34:71:cb:8e:06:ee:11:2e:37:49:3c"
+              },
+              "tls.handshake.session_id_length": "32",
+              "tls.handshake.session_id": "c6:9f:5a:33:78:dd:93:06:bf:97:22:d5:04:9d:e6:ec:36:8a:79:7b:0c:63:19:4d:35:34:2e:bd:c2:4a:bd:7e",
+              "tls.handshake.cipher_suites_length": "32",
+              "tls.handshake.ciphersuites": {
+                "tls.handshake.ciphersuite": "64250",
+                "tls.handshake.ciphersuite": "4865",
+                "tls.handshake.ciphersuite": "4866",
+                "tls.handshake.ciphersuite": "4867",
+                "tls.handshake.ciphersuite": "49195",
+                "tls.handshake.ciphersuite": "49199",
+                "tls.handshake.ciphersuite": "49196",
+                "tls.handshake.ciphersuite": "49200",
+                "tls.handshake.ciphersuite": "52393",
+                "tls.handshake.ciphersuite": "52392",
+                "tls.handshake.ciphersuite": "49171",
+                "tls.handshake.ciphersuite": "49172",
+                "tls.handshake.ciphersuite": "156",
+                "tls.handshake.ciphersuite": "157",
+                "tls.handshake.ciphersuite": "47",
+                "tls.handshake.ciphersuite": "53"
+              },
+              "tls.handshake.comp_methods_length": "1",
+              "tls.handshake.comp_methods": {
+                "tls.handshake.comp_method": "0"
+              },
+              "tls.handshake.extensions_length": "403",
+              "Extension: Reserved (GREASE) (len=0)": {
+                "tls.handshake.extension.type": "35466",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: server_name (len=19)": {
+                "tls.handshake.extension.type": "0",
+                "tls.handshake.extension.len": "19",
+                "Server Name Indication extension": {
+                  "tls.handshake.extensions_server_name_list_len": "17",
+                  "tls.handshake.extensions_server_name_type": "0",
+                  "tls.handshake.extensions_server_name_len": "14",
+                  "tls.handshake.extensions_server_name": "protonmail.com"
+                }
+              },
+              "Extension: extended_master_secret (len=0)": {
+                "tls.handshake.extension.type": "23",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: renegotiation_info (len=1)": {
+                "tls.handshake.extension.type": "65281",
+                "tls.handshake.extension.len": "1",
+                "Renegotiation Info extension": {
+                  "tls.handshake.extensions_reneg_info_len": "0"
+                }
+              },
+              "Extension: supported_groups (len=10)": {
+                "tls.handshake.extension.type": "10",
+                "tls.handshake.extension.len": "10",
+                "tls.handshake.extensions_supported_groups_length": "8",
+                "tls.handshake.extensions_supported_groups": {
+                  "tls.handshake.extensions_supported_group": "0x00003a3a",
+                  "tls.handshake.extensions_supported_group": "0x0000001d",
+                  "tls.handshake.extensions_supported_group": "0x00000017",
+                  "tls.handshake.extensions_supported_group": "0x00000018"
+                }
+              },
+              "Extension: ec_point_formats (len=2)": {
+                "tls.handshake.extension.type": "11",
+                "tls.handshake.extension.len": "2",
+                "tls.handshake.extensions_ec_point_formats_length": "1",
+                "tls.handshake.extensions_ec_point_formats": {
+                  "tls.handshake.extensions_ec_point_format": "0"
+                }
+              },
+              "Extension: session_ticket (len=0)": {
+                "tls.handshake.extension.type": "35",
+                "tls.handshake.extension.len": "0",
+                "tls.handshake.extension.data": ""
+              },
+              "Extension: application_layer_protocol_negotiation (len=14)": {
+                "tls.handshake.extension.type": "16",
+                "tls.handshake.extension.len": "14",
+                "tls.handshake.extensions_alpn_len": "12",
+                "tls.handshake.extensions_alpn_list": {
+                  "tls.handshake.extensions_alpn_str_len": "2",
+                  "tls.handshake.extensions_alpn_str": "h2",
+                  "tls.handshake.extensions_alpn_str_len": "8",
+                  "tls.handshake.extensions_alpn_str": "http/1.1"
+                }
+              },
+              "Extension: status_request (len=5)": {
+                "tls.handshake.extension.type": "5",
+                "tls.handshake.extension.len": "5",
+                "tls.handshake.extensions_status_request_type": "1",
+                "tls.handshake.extensions_status_request_responder_ids_len": "0",
+                "tls.handshake.extensions_status_request_exts_len": "0"
+              },
+              "Extension: signature_algorithms (len=18)": {
+                "tls.handshake.extension.type": "13",
+                "tls.handshake.extension.len": "18",
+                "tls.handshake.sig_hash_alg_len": "16",
+                "tls.handshake.sig_hash_algs": {
+                  "tls.handshake.sig_hash_alg": "0x00000403",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000804",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "4"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000401",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "4",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000503",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "3"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000805",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "5"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000501",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "5",
+                    "tls.handshake.sig_hash_sig": "1"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000806",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "8",
+                    "tls.handshake.sig_hash_sig": "6"
+                  },
+                  "tls.handshake.sig_hash_alg": "0x00000601",
+                  "tls.handshake.sig_hash_alg_tree": {
+                    "tls.handshake.sig_hash_hash": "6",
+                    "tls.handshake.sig_hash_sig": "1"
+                  }
+                }
+              },
+              "Extension: signed_certificate_timestamp (len=0)": {
+                "tls.handshake.extension.type": "18",
+                "tls.handshake.extension.len": "0"
+              },
+              "Extension: key_share (len=43)": {
+                "tls.handshake.extension.type": "51",
+                "tls.handshake.extension.len": "43",
+                "Key Share extension": {
+                  "tls.handshake.extensions_key_share_client_length": "41",
+                  "Key Share Entry: Group: Reserved (GREASE), Key Exchange length: 1": {
+                    "tls.handshake.extensions_key_share_group": "14906",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "1",
+                    "tls.handshake.extensions_key_share_key_exchange": "00"
+                  },
+                  "Key Share Entry: Group: x25519, Key Exchange length: 32": {
+                    "tls.handshake.extensions_key_share_group": "29",
+                    "tls.handshake.extensions_key_share_key_exchange_length": "32",
+                    "tls.handshake.extensions_key_share_key_exchange": "b0:64:96:15:d1:93:4c:6c:86:84:65:f4:f9:07:09:ae:86:f3:04:95:b9:51:34:f1:a0:76:ba:ce:0c:97:7f:2c"
+                  }
+                }
+              },
+              "Extension: psk_key_exchange_modes (len=2)": {
+                "tls.handshake.extension.type": "45",
+                "tls.handshake.extension.len": "2",
+                "tls.extension.psk_ke_modes_length": "1",
+                "tls.extension.psk_ke_mode": "1"
+              },
+              "Extension: supported_versions (len=11)": {
+                "tls.handshake.extension.type": "43",
+                "tls.handshake.extension.len": "11",
+                "tls.handshake.extensions.supported_versions_len": "10",
+                "tls.handshake.extensions.supported_version": "0x0000baba",
+                "tls.handshake.extensions.supported_version": "0x00000304",
+                "tls.handshake.extensions.supported_version": "0x00000303",
+                "tls.handshake.extensions.supported_version": "0x00000302",
+                "tls.handshake.extensions.supported_version": "0x00000301"
+              },
+              "Extension: compress_certificate (len=3)": {
+                "tls.handshake.extension.type": "27",
+                "tls.handshake.extension.len": "3",
+                "tls.compress_certificate.algorithms_length": "2",
+                "tls.compress_certificate.algorithm": "2"
+              },
+              "Extension: Reserved (GREASE) (len=1)": {
+                "tls.handshake.extension.type": "60138",
+                "tls.handshake.extension.len": "1",
+                "tls.handshake.extension.data": "00"
+              },
+              "Extension: padding (len=206)": {
+                "tls.handshake.extension.type": "21",
+                "tls.handshake.extension.len": "206",
+                "tls.handshake.extensions_padding_data": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

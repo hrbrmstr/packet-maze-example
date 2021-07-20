@@ -1,0 +1,20 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2021-07-20-15-51-38
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+1619744526.535339	Cs5VjC2cm6g7RgOEk7	192.168.1.26	47784	35.232.111.17	80	1	GET	connectivity-check.ubuntu.com	/	-	1.1	-	-	0	0	204	No Content	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744670.708475	CppqmG2OnCtQHMP9Aj	192.168.1.26	59388	91.194.146.115	80	1	GET	swisssign.net	/cgi-bin/authority/download/5B257B96A465517EB839F3C078665EE83AE7F0EE	-	1.1	Microsoft-CryptoAPI/10.0	-	0	1470	200	OK	-	-	(empty)	-	-	-	-	-	-	FQe8h83ggAaXCPhnu4	Gold_G2.ca	-
+1619744671.422848	C9vDQ84NMPnZODhack	192.168.1.26	58146	91.194.146.110	80	1	GET	gold-ev-g2.ocsp.swisssign.net	/5B257B96A465517EB839F3C078665EE83AE7F0EE/MFEwTzBNMEswSTAJBgUrDgMCGgUABBRWLiSVGpdkcjxkcyWacgNWnI4uogQUWyV7lqRlUX64OfPAeGZe6Drn8O4CEACBCDg8wAd1xAxtc2vjMIs=	-	1.1	Microsoft-CryptoAPI/10.0	-	0	1725	200	OK	-	-	(empty)	-	-	-	-	-	-	FIj1Zg43Z1eJOM6Qle	-	application/ocsp-response
+1619744754.518841	CW64EY39og8bkvdDUb	192.168.1.26	49764	216.58.192.206	80	1	HEAD	redirector.gvt1.com	/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvZmMzQUFXNXo4eEtuSTNiSWgtQVVEaW9xUQ/1.0.0.6_llkgjffcdpffmhiakmfcdcblohccpfmo.crx	-	1.1	Microsoft BITS/7.8	-	0	0	302	Found	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744754.721699	CwSh1126a7tCkHtind	192.168.1.26	41366	74.125.9.168	80	1	HEAD	r3---sn-vgqskns7.gvt1.com	/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvZmMzQUFXNXo4eEtuSTNiSWgtQVVEaW9xUQ/1.0.0.6_llkgjffcdpffmhiakmfcdcblohccpfmo.crx?cms_redirect=yes&mh=iD&mip=107.77.173.14&mm=28&mn=sn-vgqskns7&ms=nvh&mt=1619744414&mv=m&mvi=3&pl=24&shardbypass=yes	-	1.1	Microsoft BITS/7.8	-	0	0	200	OK	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744754.798399	CW64EY39og8bkvdDUb	192.168.1.26	49764	216.58.192.206	80	2	GET	redirector.gvt1.com	/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvZmMzQUFXNXo4eEtuSTNiSWgtQVVEaW9xUQ/1.0.0.6_llkgjffcdpffmhiakmfcdcblohccpfmo.crx	-	1.1	Microsoft BITS/7.8	-	0	0	302	Found	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744799.579021	CkYxcz1i17UN5oJK5h	192.168.1.26	40302	104.21.89.171	80	1	GET	dfir.science	/	-	1.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36	-	0	0	301	Moved Permanently	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744786.359244	CD1Uk34tJK6CQq2DYa	192.168.1.26	49774	216.58.192.206	80	1	GET	redirector.gvt1.com	/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvZmMzQUFXNXo4eEtuSTNiSWgtQVVEaW9xUQ/1.0.0.6_llkgjffcdpffmhiakmfcdcblohccpfmo.crx	-	1.1	Microsoft BITS/7.8	-	0	0	302	Found	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744826.454546	CS0vCZ6jp1LG2lgB8	192.168.1.26	49554	34.122.121.32	80	1	GET	connectivity-check.ubuntu.com	/	-	1.1	-	-	0	0	204	No Content	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744817.129982	Cw75sW3AQI6r3RiHrd	192.168.1.26	49788	216.58.192.206	80	1	GET	redirector.gvt1.com	/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvZmMzQUFXNXo4eEtuSTNiSWgtQVVEaW9xUQ/1.0.0.6_llkgjffcdpffmhiakmfcdcblohccpfmo.crx	-	1.1	Microsoft BITS/7.8	-	0	0	302	Found	-	-	(empty)	-	-	-	-	-	-	-	-	-
+1619744848.055994	C8qJpp4H9eNBh0GOS4	192.168.1.26	50740	216.58.192.206	80	1	GET	redirector.gvt1.com	/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvZmMzQUFXNXo4eEtuSTNiSWgtQVVEaW9xUQ/1.0.0.6_llkgjffcdpffmhiakmfcdcblohccpfmo.crx	-	1.1	Microsoft BITS/7.8	-	0	0	302	Found	-	-	(empty)	-	-	-	-	-	-	-	-	-
+#close	2021-07-20-15-51-38

@@ -1,0 +1,653 @@
+[
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:01:26.926740094 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744486.926740094",
+          "frame.time_delta": "0.000125329",
+          "frame.time_delta_displayed": "0.000000000",
+          "frame.time_relative": "35.895190063",
+          "frame.number": "530",
+          "frame.len": "650",
+          "frame.cap_len": "650",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:ftp-data:data-text-lines"
+        },
+        "eth": {
+          "eth.dst": "c8:09:a8:57:47:93",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "IntelCor_57:47:93",
+            "eth.dst.oui": "13109672",
+            "eth.dst.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.dst.lg": "0",
+            "eth.lg": "0",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "08:00:27:a6:1f:86",
+          "eth.src_tree": {
+            "eth.src_resolved": "PcsCompu_a6:1f:86",
+            "eth.src.oui": "524327",
+            "eth.src.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.addr": "08:00:27:a6:1f:86",
+            "eth.addr_resolved": "PcsCompu_a6:1f:86",
+            "eth.addr.oui": "524327",
+            "eth.addr.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000008",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "2",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "636",
+          "ip.id": "0x000035af",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x00007f46",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.20",
+          "ip.addr": "192.168.1.20",
+          "ip.src_host": "192.168.1.20",
+          "ip.host": "192.168.1.20",
+          "ip.dst": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.dst_host": "192.168.1.26",
+          "ip.host": "192.168.1.26"
+        },
+        "tcp": {
+          "tcp.srcport": "9713",
+          "tcp.dstport": "34570",
+          "tcp.port": "9713",
+          "tcp.port": "34570",
+          "tcp.stream": "11",
+          "tcp.len": "584",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "80145686",
+          "tcp.nxtseq": "585",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "4221468810",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "506",
+          "tcp.window_size": "64768",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000967f",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:41:4e:4b:b0:fa:f1:75:00",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:41:4e:4b:b0:fa:f1:75:00",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1095650224",
+              "tcp.options.timestamp.tsecr": "4210128128"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.000122446",
+            "tcp.analysis.bytes_in_flight": "584",
+            "tcp.analysis.push_bytes_sent": "584"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.000499752",
+            "tcp.time_delta": "0.000377306"
+          },
+          "tcp.payload": "64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:46:65:62:20:32:33:20:30:36:3a:33:37:20:44:65:73:6b:74:6f:70:0d:0a:64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:41:70:72:20:32:39:20:31:36:3a:34:32:20:44:6f:63:75:6d:65:6e:74:73:0d:0a:64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:46:65:62:20:32:33:20:30:36:3a:33:37:20:44:6f:77:6e:6c:6f:61:64:73:0d:0a:64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:46:65:62:20:32:33:20:30:36:3a:33:37:20:4d:75:73:69:63:0d:0a:64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:46:65:62:20:32:33:20:30:36:3a:33:37:20:50:69:63:74:75:72:65:73:0d:0a:64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:46:65:62:20:32:33:20:30:36:3a:33:37:20:50:75:62:6c:69:63:0d:0a:64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:46:65:62:20:32:33:20:30:36:3a:33:37:20:54:65:6d:70:6c:61:74:65:73:0d:0a:64:72:77:78:72:2d:78:72:2d:78:20:20:20:20:32:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:34:30:39:36:20:46:65:62:20:32:33:20:30:36:3a:33:37:20:56:69:64:65:6f:73:0d:0a:64:72:2d:78:72:2d:78:2d:2d:2d:20:20:20:20:34:20:36:35:35:33:34:20:20:20:20:36:35:35:33:34:20:20:20:20:20:20:20:20:34:30:39:36:20:41:70:72:20:32:30:20:31:37:3a:35:33:20:66:74:70:0d:0a"
+        },
+        "ftp-data": "FTP Data (584 bytes data)",
+        "ftp-data.setup-frame": "522",
+        "ftp-data.setup-method": "PASV",
+        "ftp-data.command": "LIST",
+        "ftp-data.command-frame": "524",
+        "ftp-data.current-working-directory": "/home/kali",
+        "data-text-lines": {
+          "drwxr-xr-x    2 1000     1000         4096 Feb 23 06:37 Desktop\\r\\n": "",
+          "drwxr-xr-x    2 1000     1000         4096 Apr 29 16:42 Documents\\r\\n": "",
+          "drwxr-xr-x    2 1000     1000         4096 Feb 23 06:37 Downloads\\r\\n": "",
+          "drwxr-xr-x    2 1000     1000         4096 Feb 23 06:37 Music\\r\\n": "",
+          "drwxr-xr-x    2 1000     1000         4096 Feb 23 06:37 Pictures\\r\\n": "",
+          "drwxr-xr-x    2 1000     1000         4096 Feb 23 06:37 Public\\r\\n": "",
+          "drwxr-xr-x    2 1000     1000         4096 Feb 23 06:37 Templates\\r\\n": "",
+          "drwxr-xr-x    2 1000     1000         4096 Feb 23 06:37 Videos\\r\\n": "",
+          "dr-xr-x---    4 65534    65534        4096 Apr 20 17:53 ftp\\r\\n": ""
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:01:42.962345557 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744502.962345557",
+          "frame.time_delta": "0.000050292",
+          "frame.time_delta_displayed": "16.035605463",
+          "frame.time_relative": "51.930795526",
+          "frame.number": "558",
+          "frame.len": "138",
+          "frame.cap_len": "138",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:ftp-data:data-text-lines"
+        },
+        "eth": {
+          "eth.dst": "c8:09:a8:57:47:93",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "IntelCor_57:47:93",
+            "eth.dst.oui": "13109672",
+            "eth.dst.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.dst.lg": "0",
+            "eth.lg": "0",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "08:00:27:a6:1f:86",
+          "eth.src_tree": {
+            "eth.src_resolved": "PcsCompu_a6:1f:86",
+            "eth.src.oui": "524327",
+            "eth.src.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.addr": "08:00:27:a6:1f:86",
+            "eth.addr_resolved": "PcsCompu_a6:1f:86",
+            "eth.addr.oui": "524327",
+            "eth.addr.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000008",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "2",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "124",
+          "ip.id": "0x0000eee0",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x0000c814",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.20",
+          "ip.addr": "192.168.1.20",
+          "ip.src_host": "192.168.1.20",
+          "ip.host": "192.168.1.20",
+          "ip.dst": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.dst_host": "192.168.1.26",
+          "ip.host": "192.168.1.26"
+        },
+        "tcp": {
+          "tcp.srcport": "33284",
+          "tcp.dstport": "44876",
+          "tcp.port": "33284",
+          "tcp.port": "44876",
+          "tcp.stream": "12",
+          "tcp.len": "72",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "3802109466",
+          "tcp.nxtseq": "73",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "1041291036",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "506",
+          "tcp.window_size": "64768",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000d363",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:41:4e:8a:5b:fa:f1:b3:a4",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:41:4e:8a:5b:fa:f1:b3:a4",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1095666267",
+              "tcp.options.timestamp.tsecr": "4210144164"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.000072893",
+            "tcp.analysis.bytes_in_flight": "72",
+            "tcp.analysis.push_bytes_sent": "72"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.000253943",
+            "tcp.time_delta": "0.000181050"
+          },
+          "tcp.payload": "2d:72:77:2d:2d:2d:2d:2d:2d:2d:20:20:20:20:31:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:20:32:33:39:20:41:70:72:20:32:39:20:31:36:3a:34:32:20:61:63:63:6f:75:6e:74:4e:75:6d:2e:7a:69:70:0d:0a"
+        },
+        "ftp-data": "FTP Data (72 bytes data)",
+        "ftp-data.setup-frame": "552",
+        "ftp-data.setup-method": "PASV",
+        "ftp-data.command": "LIST",
+        "ftp-data.command-frame": "553",
+        "ftp-data.current-working-directory": "/home/kali/Documents",
+        "data-text-lines": {
+          "-rw-------    1 1000     1000          239 Apr 29 16:42 accountNum.zip\\r\\n": ""
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:01:51.221947094 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744511.221947094",
+          "frame.time_delta": "0.000031972",
+          "frame.time_delta_displayed": "8.259601537",
+          "frame.time_relative": "60.190397063",
+          "frame.number": "7055",
+          "frame.len": "215",
+          "frame.cap_len": "215",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:ftp-data:data-text-lines"
+        },
+        "eth": {
+          "eth.dst": "c8:09:a8:57:47:93",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "IntelCor_57:47:93",
+            "eth.dst.oui": "13109672",
+            "eth.dst.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.dst.lg": "0",
+            "eth.lg": "0",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "08:00:27:a6:1f:86",
+          "eth.src_tree": {
+            "eth.src_resolved": "PcsCompu_a6:1f:86",
+            "eth.src.oui": "524327",
+            "eth.src.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.addr": "08:00:27:a6:1f:86",
+            "eth.addr_resolved": "PcsCompu_a6:1f:86",
+            "eth.addr.oui": "524327",
+            "eth.addr.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000008",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "2",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "201",
+          "ip.id": "0x0000e0a7",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x0000d600",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.20",
+          "ip.addr": "192.168.1.20",
+          "ip.src_host": "192.168.1.20",
+          "ip.host": "192.168.1.20",
+          "ip.dst": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.dst_host": "192.168.1.26",
+          "ip.host": "192.168.1.26"
+        },
+        "tcp": {
+          "tcp.srcport": "12063",
+          "tcp.dstport": "45970",
+          "tcp.port": "12063",
+          "tcp.port": "45970",
+          "tcp.stream": "15",
+          "tcp.len": "149",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "73679774",
+          "tcp.nxtseq": "150",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "3950345759",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "506",
+          "tcp.window_size": "64768",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000a858",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:41:4e:aa:a2:fa:f1:d3:e7",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:41:4e:aa:a2:fa:f1:d3:e7",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1095674530",
+              "tcp.options.timestamp.tsecr": "4210152423"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.000086467",
+            "tcp.analysis.bytes_in_flight": "149",
+            "tcp.analysis.push_bytes_sent": "149"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.000412083",
+            "tcp.time_delta": "0.000325616"
+          },
+          "tcp.payload": "2d:72:77:2d:2d:2d:2d:2d:2d:2d:20:20:20:20:31:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:38:35:31:39:36:30:35:20:41:70:72:20:32:39:20:32:31:3a:30:31:20:32:30:32:31:30:34:32:39:5f:31:35:32:33:32:31:2e:6a:70:67:0d:0a:2d:72:77:2d:2d:2d:2d:2d:2d:2d:20:20:20:20:31:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:20:32:33:39:20:41:70:72:20:32:39:20:31:36:3a:34:32:20:61:63:63:6f:75:6e:74:4e:75:6d:2e:7a:69:70:0d:0a"
+        },
+        "ftp-data": "FTP Data (149 bytes data)",
+        "ftp-data.setup-frame": "7047",
+        "ftp-data.setup-method": "PASV",
+        "ftp-data.command": "LIST",
+        "ftp-data.command-frame": "7049",
+        "ftp-data.current-working-directory": "/home/kali/Documents",
+        "data-text-lines": {
+          "-rw-------    1 1000     1000      8519605 Apr 29 21:01 20210429_152321.jpg\\r\\n": "",
+          "-rw-------    1 1000     1000          239 Apr 29 16:42 accountNum.zip\\r\\n": ""
+        }
+      }
+    }
+  },
+  {
+    "_index": "packets-2021-04-29",
+    "_type": "doc",
+    "_score": null,
+    "_source": {
+      "layers": {
+        "frame": {
+          "frame.interface_id": "0",
+          "frame.interface_id_tree": {
+            "frame.interface_name": "wlo1"
+          },
+          "frame.encap_type": "1",
+          "frame.time": "Apr 29, 2021 21:01:56.393410863 EDT",
+          "frame.offset_shift": "0.000000000",
+          "frame.time_epoch": "1619744516.393410863",
+          "frame.time_delta": "0.000058941",
+          "frame.time_delta_displayed": "5.171463769",
+          "frame.time_relative": "65.361860832",
+          "frame.number": "11781",
+          "frame.len": "292",
+          "frame.cap_len": "292",
+          "frame.marked": "0",
+          "frame.ignored": "0",
+          "frame.protocols": "eth:ethertype:ip:tcp:ftp-data:data-text-lines"
+        },
+        "eth": {
+          "eth.dst": "c8:09:a8:57:47:93",
+          "eth.dst_tree": {
+            "eth.dst_resolved": "IntelCor_57:47:93",
+            "eth.dst.oui": "13109672",
+            "eth.dst.oui_resolved": "Intel Corporate",
+            "eth.addr": "c8:09:a8:57:47:93",
+            "eth.addr_resolved": "IntelCor_57:47:93",
+            "eth.addr.oui": "13109672",
+            "eth.addr.oui_resolved": "Intel Corporate",
+            "eth.dst.lg": "0",
+            "eth.lg": "0",
+            "eth.dst.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.src": "08:00:27:a6:1f:86",
+          "eth.src_tree": {
+            "eth.src_resolved": "PcsCompu_a6:1f:86",
+            "eth.src.oui": "524327",
+            "eth.src.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.addr": "08:00:27:a6:1f:86",
+            "eth.addr_resolved": "PcsCompu_a6:1f:86",
+            "eth.addr.oui": "524327",
+            "eth.addr.oui_resolved": "PCS Computer Systems GmbH",
+            "eth.src.lg": "0",
+            "eth.lg": "0",
+            "eth.src.ig": "0",
+            "eth.ig": "0"
+          },
+          "eth.type": "0x00000800"
+        },
+        "ip": {
+          "ip.version": "4",
+          "ip.hdr_len": "20",
+          "ip.dsfield": "0x00000008",
+          "ip.dsfield_tree": {
+            "ip.dsfield.dscp": "2",
+            "ip.dsfield.ecn": "0"
+          },
+          "ip.len": "278",
+          "ip.id": "0x00006e3f",
+          "ip.flags": "0x00000040",
+          "ip.flags_tree": {
+            "ip.flags.rb": "0",
+            "ip.flags.df": "1",
+            "ip.flags.mf": "0"
+          },
+          "ip.frag_offset": "0",
+          "ip.ttl": "64",
+          "ip.proto": "6",
+          "ip.checksum": "0x0000481c",
+          "ip.checksum.status": "2",
+          "ip.src": "192.168.1.20",
+          "ip.addr": "192.168.1.20",
+          "ip.src_host": "192.168.1.20",
+          "ip.host": "192.168.1.20",
+          "ip.dst": "192.168.1.26",
+          "ip.addr": "192.168.1.26",
+          "ip.dst_host": "192.168.1.26",
+          "ip.host": "192.168.1.26"
+        },
+        "tcp": {
+          "tcp.srcport": "41837",
+          "tcp.dstport": "57054",
+          "tcp.port": "41837",
+          "tcp.port": "57054",
+          "tcp.stream": "18",
+          "tcp.len": "226",
+          "tcp.seq": "1",
+          "tcp.seq_raw": "145924381",
+          "tcp.nxtseq": "227",
+          "tcp.ack": "1",
+          "tcp.ack_raw": "3419008452",
+          "tcp.hdr_len": "32",
+          "tcp.flags": "0x00000018",
+          "tcp.flags_tree": {
+            "tcp.flags.res": "0",
+            "tcp.flags.ns": "0",
+            "tcp.flags.cwr": "0",
+            "tcp.flags.ecn": "0",
+            "tcp.flags.urg": "0",
+            "tcp.flags.ack": "1",
+            "tcp.flags.push": "1",
+            "tcp.flags.reset": "0",
+            "tcp.flags.syn": "0",
+            "tcp.flags.fin": "0",
+            "tcp.flags.str": "·······AP···"
+          },
+          "tcp.window_size_value": "506",
+          "tcp.window_size": "64768",
+          "tcp.window_size_scalefactor": "128",
+          "tcp.checksum": "0x0000072b",
+          "tcp.checksum.status": "2",
+          "tcp.urgent_pointer": "0",
+          "tcp.options": "01:01:08:0a:41:4e:be:d8:fa:f1:e8:1b",
+          "tcp.options_tree": {
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.nop": "01",
+            "tcp.options.nop_tree": {
+              "tcp.option_kind": "1"
+            },
+            "tcp.options.timestamp": "08:0a:41:4e:be:d8:fa:f1:e8:1b",
+            "tcp.options.timestamp_tree": {
+              "tcp.option_kind": "8",
+              "tcp.option_len": "10",
+              "tcp.options.timestamp.tsval": "1095679704",
+              "tcp.options.timestamp.tsecr": "4210157595"
+            }
+          },
+          "tcp.analysis": {
+            "tcp.analysis.initial_rtt": "0.000092637",
+            "tcp.analysis.bytes_in_flight": "226",
+            "tcp.analysis.push_bytes_sent": "226"
+          },
+          "Timestamps": {
+            "tcp.time_relative": "0.000300913",
+            "tcp.time_delta": "0.000208276"
+          },
+          "tcp.payload": "2d:72:77:2d:2d:2d:2d:2d:2d:2d:20:20:20:20:31:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:38:30:31:38:32:36:36:20:41:70:72:20:32:39:20:32:31:3a:30:31:20:32:30:32:31:30:34:32:39:5f:31:35:32:31:35:37:2e:6a:70:67:0d:0a:2d:72:77:2d:2d:2d:2d:2d:2d:2d:20:20:20:20:31:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:38:35:31:39:36:30:35:20:41:70:72:20:32:39:20:32:31:3a:30:31:20:32:30:32:31:30:34:32:39:5f:31:35:32:33:32:31:2e:6a:70:67:0d:0a:2d:72:77:2d:2d:2d:2d:2d:2d:2d:20:20:20:20:31:20:31:30:30:30:20:20:20:20:20:31:30:30:30:20:20:20:20:20:20:20:20:20:20:32:33:39:20:41:70:72:20:32:39:20:31:36:3a:34:32:20:61:63:63:6f:75:6e:74:4e:75:6d:2e:7a:69:70:0d:0a"
+        },
+        "ftp-data": "FTP Data (226 bytes data)",
+        "ftp-data.setup-frame": "11775",
+        "ftp-data.setup-method": "PASV",
+        "ftp-data.command": "LIST",
+        "ftp-data.command-frame": "11776",
+        "ftp-data.current-working-directory": "/home/kali/Documents",
+        "data-text-lines": {
+          "-rw-------    1 1000     1000      8018266 Apr 29 21:01 20210429_152157.jpg\\r\\n": "",
+          "-rw-------    1 1000     1000      8519605 Apr 29 21:01 20210429_152321.jpg\\r\\n": "",
+          "-rw-------    1 1000     1000          239 Apr 29 16:42 accountNum.zip\\r\\n": ""
+        }
+      }
+    }
+  }
+]

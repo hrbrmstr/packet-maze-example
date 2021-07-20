@@ -1,0 +1,31 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	weird
+#open	2021-07-20-15-51-38
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer	source
+#types	time	string	addr	port	addr	port	string	string	bool	string	string
+1619744546.457774	CpgeO645ZCxDqmR8vh	192.168.1.26	59648	23.51.191.35	443	SYN_inside_connection	-	F	zeek	-
+1619744546.457808	CtY9pCivXlosVnKOi	192.168.1.26	59652	23.51.191.35	443	SYN_inside_connection	-	F	zeek	-
+1619744546.457831	C79r2WmqAEmhjA3mc	192.168.1.26	59650	23.51.191.35	443	SYN_inside_connection	-	F	zeek	-
+1619744546.457845	Cgykzz45NgHu4d8Ov5	192.168.1.26	59644	23.51.191.35	443	SYN_inside_connection	-	F	zeek	-
+1619744546.457858	CP6Ox14rlLvIF9wm35	192.168.1.26	37482	40.70.229.150	443	SYN_inside_connection	-	F	zeek	-
+1619744574.419244	Cz1EJE3BGarV45R1P1	192.168.1.26	53638	24.35.154.189	55038	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744574.423221	CmQ7KI2Znt0F3ZFcgi	192.168.1.26	57504	24.35.154.189	55038	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744574.527202	CWsa8r2E61WJdi9AEb	192.168.1.26	53638	52.158.209.54	3544	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744574.674780	CRQ5by4HsyTM7brO92	192.168.1.26	53638	52.162.82.248	3544	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744574.675496	C4qXZD1GbNrRAcVtKb	192.168.1.26	53638	192.168.0.44	55038	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744579.312686	CqfFQa2DfIwTrSHsp1	192.168.1.26	53638	24.39.217.246	54150	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744579.315156	CvJc0xNrO2ZxQ1Aaj	192.168.1.26	51601	24.39.217.246	54150	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744579.427646	ChfrjP3Iz2Nyl8zHQl	192.168.1.26	53638	40.65.246.52	3544	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744659.809764	C70WWA3gcgRTnFYcv6	192.168.1.26	53638	99.102.208.234	58983	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744659.812428	CkOule2TKanQjNEAC8	192.168.1.26	33068	99.102.208.234	58983	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744740.553113	C6Days1IAK71aWnrod	192.168.1.26	53638	68.63.200.227	56004	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744740.556124	C7Au7QJWHiEchKZkg	192.168.1.26	46375	68.63.200.227	56004	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744740.765131	CP0cnWHLx5G1AhrF2	192.168.1.26	53638	10.0.0.26	56004	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744821.029576	Cccmvd1B6THEqN7Dm5	192.168.1.26	53638	68.66.175.202	63654	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744821.032722	CndI9K1OSRWMr6Nbhc	192.168.1.26	51302	68.66.175.202	63654	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744901.492884	CXWoDa4O8UudFyIvBl	192.168.1.26	53638	23.121.202.188	63286	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+1619744901.498170	CKGb0U1QED3jKvF1Fh	192.168.1.26	60531	23.121.202.188	63286	Teredo_bubble_with_payload	-	F	zeek	TEREDO
+#close	2021-07-20-15-51-38

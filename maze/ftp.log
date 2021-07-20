@@ -1,0 +1,19 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ftp
+#open	2021-07-20-15-51-37
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	user	password	command	arg	mime_type	file_size	reply_code	reply_msg	data_channel.passive	data_channel.orig_h	data_channel.resp_h	data_channel.resp_p	fuid
+#types	time	string	addr	port	addr	port	string	string	string	string	string	count	count	string	bool	addr	addr	port	string
+1619744486.920342	C8Dj3Q3iDu9wClILU3	192.168.1.26	48794	192.168.1.20	21	kali	AfricaCTF2021	PASV	-	-	-	227	Entering Passive Mode (192,168,1,20,37,241).	T	192.168.1.26	192.168.1.20	9713	-
+1619744502.961220	C8Dj3Q3iDu9wClILU3	192.168.1.26	48794	192.168.1.20	21	kali	AfricaCTF2021	PASV	-	-	-	227	Entering Passive Mode (192,168,1,20,130,4).	T	192.168.1.26	192.168.1.20	33284	FdUuFnzYoWmgTJpWj
+1619744511.117623	CJMINk4WMWxCQkaNkh	192.168.1.26	48800	192.168.1.20	21	kali	AfricaCTF2021	PASV	-	-	-	227	Entering Passive Mode (192,168,1,20,157,146).	T	192.168.1.26	192.168.1.20	40338	-
+1619744511.118490	CJMINk4WMWxCQkaNkh	192.168.1.26	48800	192.168.1.20	21	kali	AfricaCTF2021	STOR	ftp://192.168.1.20/home/kali/Documents/20210429_152321.jpg	image/jpeg	-	226	Transfer complete.	-	-	-	-	FQGYpy498apO3QtAp2
+1619744511.220622	CJMINk4WMWxCQkaNkh	192.168.1.26	48800	192.168.1.20	21	kali	AfricaCTF2021	PASV	-	-	-	227	Entering Passive Mode (192,168,1,20,47,31).	T	192.168.1.26	192.168.1.20	12063	FQGYpy498apO3QtAp2
+1619744516.274514	CJMINk4WMWxCQkaNkh	192.168.1.26	48800	192.168.1.20	21	kali	AfricaCTF2021	PASV	-	-	-	227	Entering Passive Mode (192,168,1,20,134,87).	T	192.168.1.26	192.168.1.20	34391	F4N5JV1RASlZH0RSAj
+1619744516.276106	CJMINk4WMWxCQkaNkh	192.168.1.26	48800	192.168.1.20	21	kali	AfricaCTF2021	STOR	ftp://192.168.1.20/home/kali/Documents/20210429_152157.jpg	image/jpeg	-	226	Transfer complete.	-	-	-	-	Fc0eRf19VZPgRty18e
+1619744516.392095	CJMINk4WMWxCQkaNkh	192.168.1.26	48800	192.168.1.20	21	kali	AfricaCTF2021	PASV	-	-	-	227	Entering Passive Mode (192,168,1,20,163,109).	T	192.168.1.26	192.168.1.20	41837	Fc0eRf19VZPgRty18e
+1619744523.701700	CZTKOV3K4tzblJgnNl	192.168.1.26	48810	192.168.1.20	21	kali	AfricaCTF2021	PASV	-	-	-	227	Entering Passive Mode (192,168,1,20,247,209).	T	192.168.1.26	192.168.1.20	63441	-
+1619744523.702877	CZTKOV3K4tzblJgnNl	192.168.1.26	48810	192.168.1.20	21	kali	AfricaCTF2021	RETR	ftp://192.168.1.20/home/kali/Documents/accountNum.zip	application/zip	239	226	Transfer complete.	-	-	-	-	FQfEDU24z76Uz8oWXi
+#close	2021-07-20-15-51-38

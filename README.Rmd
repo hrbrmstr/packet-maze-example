@@ -1,0 +1,689 @@
+---
+title: 'Packet Maze: Solving a CyberDefenders PCAP Puzzle with R, Zeek, and tshark'
+output: 
+    rmarkdown::github_document:
+      toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Not all data is 'big' nor do all data-driven cybersecurity projects require advanced modeling capabilities. Sometimes you just need to dissect some network packet capture (PCAP) data and don't want to click through a GUI to get the job done. This short book works through the questions in [CyberDefenders Lab #68](https://cyberdefenders.org/labs/68) to show how you can get the [Zeek open source network security tool](https://zeek.org/), [`tshark` command-line PCAP analysis Swiss army knife](https://www.wireshark.org/docs/man-pages/tshark.html), and [R](https://www.r-project.org/) (via [RStudio](https://www.rstudio.com/)) working together.
+
+## What is this?
+
+A stripped down version of the examples from [the ebook](https://rud.is/books/packet-maze/).
+
+## Let's get this party started
+
+```{r libs}
+library(glue, include.only = "glue")
+library(jsonlite, include.only = "fromJSON")
+library(stringi, include.only = c("stri_replace_all_regex", "stri_replace_all_fixed", "stri_detect_fixed", "stri_trim_both"))
+library(exif, include.only = "read_exif")
+library(sf)
+library(magick, include.only = "image_read")
+library(MACtools)
+library(tidyverse)
+```
+
+## Test Command Line Tool and File Access
+
+Now we'll see if `zeek` and `tshark` are available via R:
+
+```{r zeek-tshark-test-01, eval=TRUE, echo=TRUE, cache=FALSE}
+system("zeek -v", intern = TRUE) # use the path to your own Zeek installation or ensure it's on the system PATH
+
+system("tshark -v", intern = TRUE)  # use the path to your own tshark installation or ensure it's on the system PATH
+```
+
+And make sure the PCAP is in there (you'll need to provide this from [the challenge](https://cyberdefenders.org/labs/68)).
+
+```{r pcap-test-01, echo=TRUE}
+list.files("maze")
+```
+
+## PCAP Metadata
+
+We can get an overview of the PCAP file contents with the [`capinfos` utility](https://tshark.dev/analyze/get_info/capinfos/) that comes along for the ride with `tshark`:
+
+```{r capinfos-01}
+cat(system("capinfos maze/maze.pcapng", intern=TRUE), sep="\n")
+```
+
+## Processing PCAPs with Zeek
+
+We'll first generate a series of standard Zeek "log" files that are packet-capture feature-specific structured files. We've enabled the `mac-logging` rules so certain log files will also contain [MAC addresses](https://en.wikipedia.org/wiki/MAC_address) of the nodes (since some questions ask about those).
+
+```{r process-pcap-zeek-01, eval=FALSE}
+wd <- getwd()
+setwd("maze")
+system("zeek --no-checksums --readfile maze.pcapng policy/protocols/conn/mac-logging")
+setwd(wd)
+```
+
+We can see if that worked by getting a directory listing:
+
+```{r process-pcap-zeek-02, eval=TRUE}
+list.files("maze")
+```
+
+Each log file has different information based upon what was contained in the PCAP. For our example, these are the logs that were generated. Follow the links to learn more about what is in each of them.
+
+- `conn.log`: [TCP/UDP/ICMP connections](https://docs.zeek.org/en/master/logs/conn.html)
+- `dns.log`: [DNS Activity](https://docs.zeek.org/en/master/logs/dns.html)
+- `files.log`: [File analysis results](https://docs.zeek.org/en/master/logs/files.html)
+- `ftp.log`: [FTP activity](https://docs.zeek.org/en/master/logs/ftp.html)
+- `http.log`: [HTTP requests and replies](https://docs.zeek.org/en/master/logs/http.html)
+- `packet_filter.log`: [List packet filters that were applied](https://docs.zeek.org/en/master/scripts/base/frameworks/packet-filter/main.zeek.html)
+- `ssl.log`: [SSL/TLS handshake info](https://docs.zeek.org/en/master/logs/ssl.html)
+- `tunnel.log`: [Tunneling protocol events](https://docs.zeek.org/en/master/logs/tunnel.html)
+- `weird.log`: [Unexpected network-level activity ](https://docs.zeek.org/en/master/logs/weird-and-notice.html)
+- `x509.log`: [X.509 certificate info](https://docs.zeek.org/en/master/logs/x509.html)
+
+### Zeek Log File Helper Function
+
+Zeek logs are well-structured files that, by default, have a very informative header:
+
+```{r zeek-helper-01, eval=TRUE, echo=TRUE}
+read_lines("maze/conn.log", n_max = 8) 
+```
+
+As such, having a small helper function to deal with assigning valid column names and skipping past the header will be helpful:
+
+```{r zeek-helper-03, eval=TRUE, echo=TRUE}
+read_zeek_log <- function(path) {
+  
+  # get column names
+  read_lines(path[1], n_max = 7) %>% 
+    last() %>% 
+    strsplit("\t") %>% 
+    unlist() %>% 
+    tail(-1) -> cols
+  
+  read_tsv(path[1], col_names = cols, comment = "#")  
+  
+  suppressMessages(
+    read_tsv(
+      file = path[1], 
+      col_names = cols, 
+      comment = "#" # read, skipping header
+    )
+  )
+  
+}
+```
+
+## Processing PCAPs with `tshark`
+
+Zeek is great, but some questions ask about packet numbers (and, it's often helpful to have packet-level information available in general). For this, we'll turn to `tshark` to generate a lightweight delimited text file with basic, per-packet metadata:
+
+```{r process-pcap-tshark-01, eval=TRUE}
+system("tshark -T tabs -r maze/maze.pcapng > maze/maze.txt")
+```
+
+Let's take a look at at the first few lines:
+
+```{r process-pcap-tshark-02, eval=TRUE}
+read_lines("maze/maze.txt", n_max = 10)
+```
+
+This is a straightforward tab separated values (TSV) file without a header, which means using something like `readr::read_tsv()` will work fine, but column names will be `X1`, `X2`, etc. We could leave them like that since this is just a small exercise and we won't be using this packet information much, but it's nicer to work with column names that mean something, so we'll assign the following names when we read in the file:
+
+- `packet_num`: Packet number
+- `ts`: Time (relative to the start of the capture) the packet was seen
+- `src`: Source address
+-  Kinda useless arrow that we'll leave out of the data frame
+- `dst`: Destination address
+- `proto`: Protocol
+- `length`: Packet length (bytes)
+- `info`: General information about the packet
+
+We can squeeze a more up-front metadata that may come in handy later on using the `tshark` `-z` option which lets us gather different statistics. Specifically, we'll generate a list of IP address → host mappings (from the DNS queries that were performed during the session) :
+
+```{r process-pcap-tshark-04, eval=TRUE}
+system("tshark -q -z hosts -r maze/maze.pcapng > maze/hosts.txt") 
+```
+
+This is yet-another plaintext, tab-separated file with comments and no header line (we'll read this in and look at it later)
+
+## 11 Quests
+
+The story setup for these exercises is that we are analysts working for a security service provider and have been tasked with analyzing a packet capture for a customer's employee whose network activity has been monitored for a while. The company suspects this individual is a possible insider threat.
+
+The set of questions appears to be randomized on the CyberDefenders site (likely to prevent blind copy/pasting from solution sets like this). We're going to tackle them in the following order to create a more logical flow.
+
+1. How many UDP packets were sent from `192.168.1.26` to `24.39.217.246`?
+1. What is the MAC address of the system being monitored?
+1. What domain is the user looking up in packet 15174?
+1. What domain was the user connected to in packet 27300?
+1. What is the IPv6 address of the DNS server used by `192.168.1.26`?
+1. What is the FTP password?
+1. What is the first TLS 1.3 client random that was used to establish a connection with `protonmail.com`?
+1. What is the server certificate public key that was used in TLS session: `da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff`?
+1. What time was a non-standard folder created on the FTP server on the 20th of April?
+1. What country is the MAC address of the FTP server registered in?
+1. What was the camera model name used to take picture `20210429_152157.jpg`?
+
+The challenge setup does not state this overtly, but the target of our network analysis is the user activity associated with the IP address `192.168.1.26`.
+
+To start, we'll read in the packet information file we generated with `tshark`:
+
+```{r user-activity-01}
+packet_cols <- c("packet_num", "ts", "src", "discard", "dst", "proto", "length", "info")
+
+read_tsv(
+  file = "maze/maze.txt",
+  col_names = packet_cols,
+  col_types = "ddccccdc"
+) %>% 
+  select(-discard) %>% 
+  glimpse() -> packets
+
+packets
+```
+
+Now we'll get an overview of the activity by looking at the number of packets originating from the target we're investigating to each distinct host by protocol:
+
+```{r user-activity-02}
+packets %>% 
+  filter(src == "192.168.1.26") %>% 
+  count(src, dst, proto, sort=TRUE) %>% 
+  print(n=20) # limiting to 20 rows of output for brevity; IRL you'd likely want to see them all
+```
+
+as well as the overall protocol use distribution:
+
+```{r user-activity-03}
+packets %>% 
+  count(proto, sort=TRUE) %>% 
+  print(n=nrow(.))
+```
+
+We can further count the total number of network hosts contacted:
+
+```{r user-activity-04}
+packets %>% 
+  filter(
+    src == "192.168.1.26",
+    dst != "192.168.1.26"
+  ) %>% 
+  distinct(dst) %>% 
+  count()
+```
+
+You are encouraged to poke around this data frame with some of the concepts you may have seen in [R4DS](https://r4ds.had.co.nz/wrangle-intro.html) before jumping into the first quest.
+
+## How many UDP packets were sent from `192.168.1.26` to `24.39.217.246`?
+
+### Question Setup
+
+We've been asked to determine how many [UDP packets]((https://datatracker.ietf.org/doc/html/rfc768):) were sent from `192.168.1.26` to `24.39.217.246`. You use UDP every day (well, your browsers/devices do) when you lookup website addresses (i.e. make traditional DNS queries) and even visit some websites since super fancy ones use [HTTP/3 or QUIC](https://quicwg.org/base-drafts/draft-ietf-quic-http.html) protocols to speedup web sessions. This makes knowing how to find UDP information in packet captures a "must have" skill.
+
+### Solving the quest with `tshark`
+
+The truth is that we don't really need R to answer this question since `tshark` has a rich query filter language which lets us subset what we're looking for by wide array of fields.
+
+In this case we're looking for an IP source address (`ip.src`) of `192.168.1.26` talking to an IP destination address (`ip.dst`) of `24.39.217.246` speaking the UDP (`udp`) network protocol:
+
+```{r q-01-01, cache=FALSE}
+system("tshark -r maze/maze.pcapng '(ip.src == 192.168.1.26) and (ip.dst == 24.39.217.246) and udp'", intern = TRUE)
+```
+
+If you're on a system with `wc` (word/char/line count utility — Windows folks can use [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-faq)) you can pipe that output to said utility and end up with the value `10`.
+
+### Solving the quest with R
+
+#### Using the `tshark` `packets` data
+
+We already have `packets` in memory from above and can use a `{dplyr}` chain with essentially the same query we used in `tshark`:
+
+```{r q-01-02}
+packets %>% 
+  filter(
+    src == "192.168.1.26", 
+    dst == "24.39.217.246",
+    proto == "UDP"
+  ) %>% 
+  count()
+```
+
+We can also use "classic R" idioms (along with the new, built-in/native pipe symbol `|>`) if we're in a retro-ish mood:
+
+```{r q-01-03}
+packets |>
+  subset(
+    (src == "192.168.1.26") &
+      (dst == "24.39.217.246") &
+      (proto == "UDP")    
+  ) |>
+  nrow()
+```
+
+#### Using Zeek `conn.log` data
+
+We can arrive at the same answer by examining the Zeek `conn.log` data using a similar technique. The Zeek `src`/`dst` equivalents are `id.orig_h`/`id.resp_h` (`proto` is the same but the contents are lowercase), and Zeek's `conn.log` has an `orig_pkts` field for each record which is the number of packets that the originator sent, which means we just need to sum those up to get our answer.
+
+```{r q-01-04}
+# read in the Zeek conn.log — this will now be in memory for future reference
+(conn <- read_zeek_log("maze/conn.log"))
+
+conn %>% 
+  filter(
+    (id.orig_h == "192.168.1.26"),
+    (id.resp_h == "24.39.217.246"),
+    (proto == "udp")
+  ) %>% 
+  count(
+    wt = orig_pkts
+  )
+```
+
+## What is the MAC address of the system being monitored?
+
+### Question Setup
+
+In this quest, we've been tasked with identifying the [MAC address](https://en.wikipedia.org/wiki/MAC_address) of the system being monitored. (NOTE: From Chapter 4 we know the system being monitored is `192.168.1.26`). These are the addresses assigned to the network interface hardware and can be useful in identifying system types. While these addresses [can be forged](https://en.wikipedia.org/wiki/MAC_spoofing), they are still useful (especially so if an analysis can determine that one or more MAC addresses were indeed spoofed) and it is good to have an understanding of how to work with them in an analysis.
+
+### Solving the quest with `tshark`
+
+We can limit the output fields `tshark` displays via the `-Tfields` option and specifying the fields we want by adding `-e FIELD-NAME` options.
+
+The MAC address is the `eth.src` field and we can use an additional display filter — `frame.number` — to limit the output to the first frame of the subset we're filtering on:
+
+```{r ch-05-01, cache=FALSE}
+system("tshark -r maze/maze.pcapng -nn -e ip.src -e eth.src -Tfields '(ip.src == 192.168.1.26) and (frame.number == 1)'", intern=TRUE)
+```
+
+### Solving the quest with R and Zeek's `conn.log`
+
+Remember back when we made sure that Zeek included MAC addresses when it generated log files? This question is one reason we did that. The `conn` data frame has `orig_l2_addr` and `resp_l2_addr` columns for the source and destination MAC addresses.
+
+We can perform another, similar filter to find out the MAC address for the target:
+
+```{r ch-05-02}
+conn %>% 
+  filter(id.orig_h == "192.168.1.26") %>% 
+  distinct(orig_l2_addr)
+```
+
+```{r ch-05-03}
+conn |>
+  subset(
+    id.orig_h == "192.168.1.26", # our target
+    select = orig_l2_addr,       # select the MAC address field
+    drop = TRUE                  # reduce the output to a vector
+  ) %>%
+  unique()
+```
+
+## What domain is the user looking up in packet 15174?
+
+### Question Setup
+
+We're finally getting into some interesting areas with our latest quest to discover what domain the user is looking up in packet `15174`. PCAPs hold the entire conversation between a source and destination, including the contents of the data being exchanged. If encryption is not in the way it is possible to reconstruct that data (if the formats are known) and see what was being exchanged. Unencrypted DNS queries have a longstanding format that `tshark`, Zeek, and _many_ other tools know how to decode.
+
+This is a good quest to work through to see how to select specific packets and look at their contents.
+
+### Solving the quest with `tshark`
+
+We learned about `frame.number` in the previous chapter and can use that knowledge to quickly arrive at the answer:
+
+```{r ch-06-01, cache=FALSE}
+system("tshark -r maze/maze.pcapng frame.number == 15174", intern=TRUE)
+```
+
+### Solving the quest with R and `packets`
+
+We can perform nearly the same thing with the `packets` data frame in many ways. First with `{dplyr}`:
+
+```{r ch-06-02}
+packets %>% 
+  filter(
+    packet_num == 15174
+  ) %>% 
+  select(info)
+```
+
+We also rely on the fact that `packet_num` is sequential starting with 1, so we can just index the data frame directly:
+
+```{r ch06-03}
+packets[15174, "info", drop=TRUE] 
+
+packets$info[15174]
+```
+
+## What domain was the user connected to in packet 27300?
+
+### Question Setup
+
+True to the name of this challenge we have to make a few twists and turns to figure out what domain the user connected to in packet 27300? This involves selecting the packet and grabbing the destination IP, then looking that up in other metadata we can generate. This will help build or refresh the use of a common idiom in cybersecurity analyses: using multiple data sources to arrive at an an answer.
+
+### Solving the quest with R and `packets`
+
+We finally have an opportunity to use the `hosts.txt` file we generated in Chapter 2! And, while we could do a few `tshark` standalone command line machinations to solve this quest, it doesn't make much sense to since we have to deal with multiple calls, already have the data we need, and would have to use other command line tools to truly "solve" it well with "just" `tshark`.
+
+```{r ch-07-02}
+# read in our hosts/ip file
+read_tsv(
+  file = "maze/hosts.txt",
+  col_names = c("ip", "hostname"), 
+  col_types = "cc",
+  skip = 3
+) -> hosts
+
+packets %>% 
+  filter(packet_num == 27300) %>% 
+  select(ip = dst) %>% 
+  left_join(hosts)
+```
+
+Old-school R follows the same idiom:
+
+```{r ch-07-03}
+packets |>
+  subset(
+    packet_num == 27300,
+    select = dst
+  ) |>
+  merge(
+    hosts, 
+    by.x = "dst", 
+    by.y = "ip"
+  )
+```
+
+## What is the IPv6 address of the DNS server used by `192.168.1.26`?
+
+### Question Setup
+
+Our maze is getting even twistier now as we seek out the IPv6 address of the DNS server used by `192.168.1.26`? If we don't read the question thoroughly it is possible to arrive at a wrong answer by forgetting it asked about the DNS server the client is using and not the client itself.
+
+This quest also underscores a critical fact about modern computing environments: IPv6 adoption is increasing and many (if not most) hosts — at least on internal networks — use both IPv4 and IPv6 addresses at the same time. Knowing the various addresses a given host (idenfitied via MAC address) has/had is crucial to tracing activity. Forgetting that IPv6 can be in play could be a costly mistake IRL.
+
+### Solving the quest with R and Zeek `conn.log`
+
+Again, while we could do a few `tshark` standalone command line machinations to solve this quest, it doesn't make much sense to since we have to deal with multiple calls, already have the data we need, and would have to use other command line tools to truly "solve" it well with "just" `tshark`.
+
+We first need to find (in `conn`) the DNS traffic for our target host, then take the MAC address of the IP address it is talking to and then re-look for that in `conn`:
+
+```{r ch-08-02}
+conn %>% 
+  filter(
+    id.orig_h == "192.168.1.26", 
+    service == "dns"
+  ) %>% 
+  select(orig_l2_addr = resp_l2_addr) %>% 
+  left_join(conn) %>% 
+  filter(!is.na(id.orig_h)) %>% 
+  distinct(id.orig_h)
+```
+
+Base R is, again, similar:
+
+```{r ch-08-03}
+conn %>% 
+  subset(
+    id.orig_h == "192.168.1.26" & service == "dns",
+    select = resp_l2_addr
+  ) |>
+  merge(
+    conn,
+    by.x = "resp_l2_addr",
+    by.y = "orig_l2_addr"
+  ) |>
+  subset(
+    !is.na(id.orig_h),
+    select = id.orig_h,
+    drop = TRUE
+  ) %>% 
+  unique()
+```
+
+## What is the FTP password?
+
+### Question Setup
+
+We mentioned in a previous chapter that PCAPs contain all the details of network exchanges between hosts. When this information is not encrypted, anyone on the network, or in possession of a capture such as this, can see the payloads. This quest helps underscore how terribly insecure bare FTP is. However, since FTP will be around for some time to come, knowing where and how to look for answers to FTP questions will be a necessary skill.
+
+### Solving the quest with R and Zeek `ftp.log`
+
+This one is almost too easy. Because we used Zeek to pre-process the PCAP file, we have all the FTP session information available in the `ftp.log` log file. One of the fields in that file is (you guessed it) `password`:
+
+```{r ch-09-03}
+# read in the Zeek ftp.log — this will now be in memory for future reference
+
+(ftp <- read_zeek_log("maze/ftp.log"))
+
+distinct(ftp, password)
+
+# or with Base R
+
+unique(ftp$password)
+```
+
+## What is the first TLS 1.3 client random that was used to establish a connection with `protonmail.com`?
+
+### Question Setup
+
+We've mazed into encrypted, technical territory with our new quest to seek out the first TLS 1.3 client random that was used to establish a connection with `protonmail.com`? TLS (transport layer security) is what your browser (and other clients) use to keep data away from prying eyes. TLS connections must be setup/established through a handshake process and we've been asked to pick out a certain element from the first handshake made to a connection to ProtonMail, an end-to-end encrypted email service hosted in Switzerland.
+
+This quest expects us to know about this handshake and where to look for the associated data. In the most TLS exchange algorithm (RSA) the first message in this handshake is what is known as the "client hello" message. Your client send a "hey there" greeting to the server, telling it what TLS version and cipher suites it supports plus a string of random bytes boringly known as the "client random". This is target of our quest.
+
+While we've generated _many_ files from the PCAP, we're going to have to poke at it again to solve this question with the least amount of frustration. The `tshark` filters contain a cadre of [`tls` filters](https://www.wireshark.org/docs/dfref/t/tls.html), one of which is `tls.handshake.extensions_server_name` which can be used to search for server names specified in the [Server Name Indication](https://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) TLS extension field. Since this name will be in the client hello, we can filter on it and then identify the first client random.
+
+### Solving the quest with `tshark` custom filters
+
+We really don't need R at all since we can create a display filter and choose what fields to output right on the `tshark` command line:
+
+```{r ch-10-03}
+system("tshark -r maze/maze.pcapng -e tls.handshake.random -Tfields tls.handshake.extensions_server_name == 'protonmail.com'", intern=TRUE)
+```
+The first element is the target of our quest.
+
+### Solving the quest with R and `tshark` custom filters
+
+TLS JSON output in `tshark` is ginormous, so filtering as much as possible before outputting the JSON is paramount.
+
+We'll take a similar strategy to the pure `tshark` version above and grab all the handshakes for Proton Mail. The `-T json` unsurprisingly generates JSON output and you are encouraged to bring that file up in `vim`, Sublime Text, or even pipe it through `jq` to see how complex the structure is. We'll do the same in R:
+
+```{r ch-10-04, cache=FALSE}
+system("tshark -T json -r maze/maze.pcapng tls.handshake.extensions_server_name == 'protonmail.com' > maze/proton-q.json")
+
+library(jsonlite, include.only = "fromJSON")
+
+proton_hands <- fromJSON("maze/proton-q.json")
+
+str(proton_hands, 3) # look at the structure of the object, only going 3 nested levels deep
+```
+
+We can see that each packet has many layers (and not all packets must or will have the same layer types in a given PCAP). This data structure contains extracted handshakes associated with the `protonmail.com` SNI, and all of this information will be in the `tls` structure.
+
+```{r ch-10-05}
+str(proton_hands$`_source`$layers$tls, 2)
+```
+
+This structure include the `tls.handshake`, so we can wind down a twisty path to get to our quarry:
+
+```{r ch-10-06}
+# grab the first handshake random
+proton_hands$`_source`$layers$tls$tls.record$tls.handshake$tls.handshake.random[1]
+```
+
+There's one "nit" left, which is that the challenge answer box expects a value with no colons. We can quickly fix that:
+
+```{r ch-10-07}
+gsub(":", "", proton_hands$`_source`$layers$tls$tls.record$tls.handshake$tls.handshake.random[1])
+```
+
+## What is the server certificate public key that was used in TLS session: `da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff`?
+
+### Question Setup
+
+We learned in the previous chapter that knowledge of TLS sessions can be pretty handy when poking at PCAPs and this chapter expands upon that knowledge by asking us to reveal the server certificate public key that was used in TLS session: `da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff`? Being able to extract and compare TLS session elements is another handy skill, and this example will let us explore another set of `tshark` display filter and output fields that can come in usful in future IRL scenarios.
+
+### Solving the quest with `tshark` custom filters (and a _wee_ bit of R)
+
+That's right, we're not going to make you generate giant JSON files and sift through horribly nested R lists. We _are_ going to need _some_ help from R since the question gave us a session byte string _without_ colons, which `tshark` requires in their filters, so we'll use R to generate that before passing the info to the command line.
+
+We'll use regular expression-based find/replace via the `{stringi}` package. In the regex below, the `(?!$)` hieroglyphics means "but not at the end of the string" and the `(.{2})` hieroglyphics means "match every two characters and take them as a group". Once we have a valid value, we can use the `{glue}` package to add that to the `tshark` command line call via string interpolation.
+
+Speaking of `tshark` filters, we're searching on `tls.handshake.session_id` for the provided session, and if we re-visit the [online display filter reference](https://www.wireshark.org/docs/dfref/t/tls.html) we can see that the "public key" (or `Pubkey`) is `tls.handshake.server_point`, so we can focus on just extracting that.
+
+```{r ch-11-03, cache = TRUE}
+library(stringi)
+library(glue)
+
+(stri_replace_all_regex(
+  str = "da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff",
+  pattern = "(.{2})(?!$)",
+  replacement = "$1:"
+) -> session_to_find)
+
+system(
+  glue(
+    "tshark -e tls.handshake.server_point -Tfields -r maze/maze.pcapng tls.handshake.session_id == '{session_to_find}'"
+  ), intern=TRUE
+)
+```
+
+## What time was a non-standard folder created on the FTP server on the 20th of April?
+
+### Question Setup
+
+We weren't fibbing when we said we'd be back in FTP land sooner than later. As stated previously, FTP is a cleartext protocol so we can see _everything_ that goes on between a client and server. If someone, say, asks for a directory listing (via the `LIST` command — ref: [RFC 959](https://www.rfc-editor.org/rfc/rfc959.html)) we'll see whatever the server returned, which usually contains file/directory metadata. If we can find this response, we'll be able to determine what time a non-standard folder was created on the FTP server on the 20th of April.
+
+### Solving the quest with `tshark` custom filters (and a _wee_ bit of R)
+ 
+Unfortunately, we do not have enough data in our Zeek `ftp.log` to answer this question. However, `tshark` has a plethora of [FTP filters](https://www.wireshark.org/docs/dfref/f/ftp.html) we can use. Let's extract all of the FTP packets that have `ftp-data` elements (associated  with the `LIST` request) since we know they'll have the responses:
+
+```{r ch-12-03, cache = TRUE}
+system("tshark -T json -r maze/maze.pcapng ftp-data and ftp-data.command == 'LIST' > maze/ftp-q1.json")
+
+ftpq1 <- fromJSON("maze/ftp-q1.json", simplifyDataFrame = FALSE)
+```
+
+Let's see what layers we have available:
+
+```{r ch-12-04}
+names(ftpq1[[1]]$`_source`$layers)
+```
+
+Sure enough, we have `ftp-data` element in there, including the `data-text-lines` responses which we can inspect:
+
+```{r ch-12-05}
+ftpq1 %>% 
+  map(~.x[c(1,2,4)]) %>% 
+  bind_rows() %>%  # make a data frame out of the individual list elements
+  glimpse() %>% 
+  pull(`_source`) %>% 
+  pluck("layers", "data-text-lines") %>% 
+  names()
+```
+
+From that listing we can tell the odd `ftp` folder was created at `17:53`
+
+## What country is the MAC address of the FTP server registered in?
+
+### Question Setup
+
+We did say that MAC addresses provide quite a bit of metadata. You can head on over to [DeepMac](http://search.deepmac.org/) if you want to up-close-and-personal verification of that. In fact, you can use that search page instead of the `{MACtools}` package (below) if you're having trouble getting `{MACtools}` installed or don't trust R packages from GitHub (which you really shouldn't).
+
+This is a fine example of using external data sources in forensic analyses.
+
+### Solving the quest with Zeek `conn.log`, `ftp.log`, and R
+
+The `ftp` data frame contains information on the FTP server, so we can use that to get the server IP, then look that up in the `conn` data frame to get the MAC address. Once we have that, we can use `mac_match_registry()` or just paste the value into DeepMac.
+ 
+```{r ch-13-03, cache = TRUE}
+conn %>% 
+  filter(
+    id.resp_h == unique(ftp$id.resp_h)
+  ) %>% 
+  distinct(resp_l2_addr) %>% 
+  glimpse() %>% 
+  pull(resp_l2_addr) %>% 
+  mac_match_registry() %>% 
+  select(organization_address)
+```
+
+## What was the camera model name used to take picture `20210429_152157.jpg`?
+
+### Question Setup
+
+Our last quest is a doozy. Not only do we have to work with network data from a PCAP, but we need to also extract an image (`20210429_152157.jpg`) from it and then poke at the image metadata to identity the camera model name (it's like metadata inception).
+
+According to the [FTP RFC](https://datatracker.ietf.org/doc/html/rfc959) files are transferred via `STOR[E]` or `RETR[IEVE]`, so we'll need to figure out which one has that file then do some fun data extraction. We'll use Zeek data, a custom `tshark` filter/extraction command and R to finally get out of this maze.
+
+### Solving the quest with Zeek `ftp.log`, `tshark` filters, and R
+
+Let's first see if we're looking for `STOR` or `RETR`:
+
+```{r ch-14-03}
+ftp %>% 
+  filter(
+    command %in% c("STOR", "RETR"),
+    stri_detect_fixed(arg, "20210429_152157.jpg")
+  ) %>% 
+  select(command, arg, mime_type)
+```
+
+It looks like we're going to want `STOR`!
+
+We'll eventually use `tshark` to grab the JPG file, but to do that we need the TCP stream (so `tshark` can follow it and save the data).
+
+```{r ch-14-04, cache = TRUE}
+(unique(
+  system("tshark -Tfields -e tcp.stream  -r maze/maze.pcapng 'ftp-data.command == \"STOR 20210429_152157.jpg\"'", intern=TRUE)
+) -> stream_id)
+```
+
+Now we ask `tshark` to save that to a temporary file.
+
+```{r ch-14-05}
+tf <- tempfile(fileext = ".jpg")
+
+# -l tells tshark to flush the buffer after each line is printed (just to be safe)
+# -q tells tshark to be quiet
+# -z is a special feature to output components of packets or statistics on packets.
+#    here we are asking tshark to follow the entire stream and then we redirect 
+#    that to a file
+
+system(
+  glue(
+    "tshark -lr maze/maze.pcapng -qz 'follow,tcp,raw,{stream_id}' > {tf}"
+  )
+)
+
+jpg <- read_lines(tf)
+
+substr(jpg[1:10], 1, 80)
+```
+
+That file is definitely _not_ a JPG _yet_. There's some metadata up front, a useless bit of `======…` at the end, and the binary data has been hex-encoded. `O_o` We'll need to clean this up a bit before it's a proper image, something R is ridiculously good at.
+
+```{r ch-14-06}
+jpg[7:(length(jpg)-1)] %>% 
+  stri_trim_both() %>% # just in case
+  paste0(collapse = "") %>%  # mush it all together
+  sf:::CPL_hex_to_raw() -> img # there are other ways but this is super fast way to go from hex to raw
+```
+
+Now we can even view the image:
+
+```{r ch-15-07}
+magick::image_read(img[[1]])
+```
+
+And, check out the metadata to get the camera model:
+
+```{r ch-15-08}
+writeBin(img[[1]], tf)
+
+exif::read_exif(tf)
+
+unlink(tf)
+```
+
+We escaped the packet maze!

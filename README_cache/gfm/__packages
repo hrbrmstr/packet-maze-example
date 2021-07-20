@@ -1,0 +1,17 @@
+base
+glue
+jsonlite
+stringi
+exif
+sf
+magick
+MACtools
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+stringr
+forcats
